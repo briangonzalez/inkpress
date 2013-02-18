@@ -1,0 +1,44 @@
+/* 
+ * VARIABLES
+ * =================================================== */
+
+// SUSY ====================================================
+/* see http://susy.oddbird.net/guides/reference/ */
+$total-columns:               12;
+$column-width:                4.0em;
+$gutter-width:                0.8em;
+$grid-padding:                6em;
+$border-box-sizing:           true;
+$max-grid-width:              1000px;
+$breakpoint:                  0em 45em; /* min-max media query breakpoint */
+$from-direction:              left;
+$omega-float:                 $from-direction;
+
+// MARGINS ==================================================
+$base-space:                  1.8em;              
+
+// COLORS ====================================================
+$primary-color:               #ff7257;               // use for all links, buttons, etc.
+$secondary-color:             #4fb3f0;               // used in the round logo an other places
+$text-color:                  #35332E;
+$bg-color:                    #fff;
+$lightgrey:                   #ddd;
+$super-lightgrey:             #f6f6f6;
+$darkgrey:                    #333;
+$tan-grey:                    #fcfcfa;
+$border-color:                #eee;
+$blockquote-border-color:     $primary-color;
+
+// BUTTONS =======================================================
+$button-border-radius:        5px;
+$button-color:                white;
+
+// TYPOGRAPHY ====================================================
+$base-font-size:              1em;              
+$base-line-height:            $base-space;     
+$base-font-weight:            400;
+$base-font:                   'PT Sans', 'Open Sans', Arial, sans-serif, sans;
+$base-heading-font:           Lato, Arial, sans-serif, sans;
+$code-font:                   'Source Code Pro',Consolas,Menlo,Monaco,Courier New,monospace,serif;
+$base-heading-fontweight:     bold;
+$base-headingfont-color:      #333;

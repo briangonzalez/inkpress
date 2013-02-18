@@ -1,0 +1,45 @@
+- @title = 'Edit'
+
+!!!
+/[if lt IE 7]   <html class="no-js lt-ie9 lt-ie8 lt-ie7">  
+/[if IE 7]      <html class="no-js lt-ie9 lt-ie8">  
+/[if IE 8]      <html class="no-js lt-ie9">  
+/[if gt IE 8]>  <html class="no-js">
+
+%head
+  = partial "partials/head"
+
+%body.admin
+  .admin-edit-page
+
+    .zen-controls
+      %i.icon-resize-small.toggle-zen.small
+      %i.icon-tint.toggle-color
+
+    .controls
+      %a.control.preview{ :href => '#', :title => 'Toggle preview pane' }
+        %i{ :class => 'icon-eye-open' }      
+        %a.control.save{ :href => '#', :title => 'Save' }
+          %i{ :class => 'icon-save' }
+        %a.control.files{ :href => '#', :title => 'Show associated files' }
+          %i{ :class => 'icon-folder-open' }
+        %a.control.short-url{ :href => '#', :title => 'Make a short URL' }
+          %i{ :class => 'icon-link' }
+
+      %a.control.toggle-zen{ :href => '#', :title => 'Toggle Zen mode' }
+        %i{ :class => 'icon-resize-full' }
+      %a.control.exit{ :href => request.path_info, :title => "Close editor" }
+        %i{ :class => 'icon-remove' }
+
+      .save-progress
+        .bar
+
+
+    %textarea.code{ :placeholder => 'no content, begin typing to edit...' }= raw_page_content(true)
+
+    .admin-preview
+      %iframe{ :src => "#{request.path_info}?preview" }
+    
+
+= partial "partials/footer_js"
+= partial "partials/ga"

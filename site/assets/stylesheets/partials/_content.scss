@@ -1,0 +1,67 @@
+ 
+//  A couple of little helpers to help us maintain the 
+//  width of our main content.
+@mixin main-full-width(){ @include span-columns(12, 12)  }
+@mixin main-right-width(){ @include span-columns(8 omega, 12) }  
+
+ div[role="main"]{
+
+  // This little doo-dad handles our nav spacing.
+  margin-top: $base-space*4;
+  @include query-at($nav-breakpoint){ margin-top: 0; }
+
+  float:left;
+  max-width: $max-grid-width;
+  @include main-full-width();
+
+  //  Get our div[role="main"] to respond.
+  //  This as well as  .side-mast will adjust at $main-breakpoint 
+  //  (see _media.scss)
+  @include query-at($main-breakpoint){
+    @include main-right-width();
+    @include pad(1,1);
+    @include push(4);
+    overflow: visible;
+  }
+
+  h1{
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 300;
+
+    @include query-at($nav-breakpoint){ font-size: 4em; }
+    @include query-at($breakpoint-5)  { font-size: 5em; }
+  }
+
+  .title + h2{
+    margin-top: 0;
+  }
+  h2{
+    font-size: 1.2em;
+    font-weight: 900;
+    display: inline-block;
+    width: 100%;
+  }
+
+  h6{
+    margin-bottom: $base-space/3;
+  }
+
+  p{ overflow: visible; }
+
+  blockquote{
+    border-left: 8px solid $primary-color;
+    color: $text-color + 50;
+    margin: 0 0 $base-space 0;
+    @include span-columns(11,12);
+    @include prefix(1);
+    @include push(1);
+    padding-top: $base-space/2;
+    padding-bottom: $base-space/2;
+  }
+
+  a       { background:   desaturate($tan-grey, 10%) ;   border-bottom: 1px solid rgba($primary-color, 0.2); }
+  a:hover { background:   rgba($primary-color, 0.1) }
+
+}
+

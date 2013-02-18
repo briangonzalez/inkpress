@@ -1,0 +1,22 @@
+!!!
+/[if lt IE 7]   <html class="no-js lt-ie9 lt-ie8 lt-ie7">  
+/[if IE 7]      <html class="no-js lt-ie9 lt-ie8">  
+/[if IE 8]      <html class="no-js lt-ie9">  
+/[if gt IE 8]>  <html class="no-js">
+
+%head
+  = partial "partials/head"
+
+%body{ :class => classified_path }
+
+  .container.primary
+
+    = partial "partials/side-mast"
+
+    %div{ :role => "main" }
+      = partial 'partials/title'
+      = yield
+      = partial "partials/footer"
+
+= partial "partials/footer_js"
+= partial "partials/ga"

@@ -1,0 +1,9 @@
+-#  Set your GA code in app.yaml to 
+-#  correspond to this site's ID.
+
+/ Google Analytics
+:javascript
+  var _gaq=[['_setAccount', '#{app(:ga)}'],['_trackPageview'],['_trackPageLoadTime']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));

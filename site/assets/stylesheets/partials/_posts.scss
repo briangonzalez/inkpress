@@ -1,0 +1,23 @@
+
+div[role="main"]{
+
+  .title{
+    margin-bottom: $base-space;
+    border-bottom: 0;
+
+    h1 { margin-bottom: 0; }
+    h2 { font-size: 1.5em; }
+
+    .meta{
+      font-size: 0.9em;
+
+      time, .author   { font-weight: 700; color: $lightgrey - 10; text-transform: uppercase;  }
+      .between        { color: $lightgrey - 5; font-style: italic; 
+                        display: inline-block; margin: 0 0.4em; font-weight: 400; 
+                        font-size: 0.9em; letter-spacing: 1px;
+                      }
+    }
+
+  }
+
+}

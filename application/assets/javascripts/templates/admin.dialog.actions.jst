@@ -1,0 +1,32 @@
+
+<div class='ink-admin-dialog'>
+  
+  <header>
+    <h2>Actions</h2>
+  </header>
+
+  <div class='content'>      
+    <a class='admin-button full new-page-post new'>
+      New Page or Post
+    </a>
+    
+    {% if ( window.location.pathname !== '/' ) { %}
+      <a class='admin-button full edit-page'>Edit this Page</a>
+    {% } %}
+    
+    <a class='admin-button full sync'>Sync Site</a>
+    <a class='admin-button full add-user'>Add User</a>
+    <a class='admin-button full generate-key'>Generate Key</a>
+    <a class='admin-button full short-url'>Make Short URL</a>
+    <a class='admin-button full upload'>Upload a File</a>
+    <a class='admin-button full app-settings'>Settings</a>
+    <a class='admin-button full logout'>Log Out</a>
+
+    {% if ( window.location.pathname !== '/' ) { %}
+      <a class='admin-button full danger delete-page'>Delete Current Page</a>
+    {% } %}
+
+    <a class='admin-button full close'>Close</a>
+  </div>
+
+</div>

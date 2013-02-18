@@ -1,0 +1,106 @@
+/**
+ * Solarized Light theme
+ *
+ * Adaptation of Solarized Light from ethanschoonover.com/solarized
+ *
+ * @author Ethan Schoonover
+ * @author David Litmark
+ * @version 1.0.0
+ */
+
+$code-background:      #fff;
+$code-current-line:    #efefef;
+$code-selection:       #d6d6d6;
+$code-foreground:      #4d4d4c;
+$code-comment:         #8e908c;
+$code-red:             #c82829;
+$code-orange:          #f5871f;
+$code-yellow:          #eab700;
+$code-green:           #718c00;
+$code-aqua:            #3e999f;
+$code-blue:            #4271ae;
+$code-purple:          #8959a8;
+
+pre {
+    background: $code-background;
+    word-wrap: break-word;
+    color: #4d4d4c;
+    border: 1px solid rgba($code-blue, 0.1);
+
+    ::selection, ::-moz-selection {
+      color: $code-foreground;
+      background: $code-current-line;
+    }
+}
+
+pre .comment {
+    color: $code-comment; 
+}
+
+pre .constant {
+    color: $code-orange;
+}
+
+pre .constant.language {
+    color: $code-yellow;
+}
+
+pre .constant.regexp {
+    color: $code-red;
+}
+
+pre .storage {
+    color: $code-blue; 
+}
+
+pre .string, pre .comment.docstring {
+    color: $code-green; 
+}
+
+pre .support.tag.script, pre .support.tag.style {
+    color: $code-blue; 
+}
+
+pre .string.regexp {
+    color: $code-blue;
+}
+
+pre .string.regexp.open, pre .string.regexp.close {
+    color: $code-blue; 
+}
+
+pre .keyword {
+    color: $code-purple; 
+}
+
+pre .selector{
+    color: $code-blue; 
+}
+
+pre .inherited-class {
+    font-style: italic;
+}
+
+pre .entity {
+    color: $code-blue; 
+}
+
+pre .function.call{
+   color: $code-blue; 
+}
+
+pre .support, *[data-language="c"] .function.call {
+    color: $code-blue; 
+}
+
+pre .support.method {
+    color: $code-orange; 
+}
+
+pre .support.property {
+    color: $code-orange;
+}
+
+pre .variable.global, pre .variable.class, pre .variable.instance {
+    color: $code-orange;
+}

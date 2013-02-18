@@ -1,0 +1,24 @@
+
+h1, h2, h3, h4, h5, h6{
+
+  a, a:visited, a:hover, a:active{
+    color: $base-headingfont-color;
+    background: none;
+  };
+
+}
+
+a, a:visited{
+  padding: 2px;
+  text-decoration: none;
+  color: $primary-color - 30;
+  font-weight: 400;
+
+  &:hover{ 
+    color:        $primary-color + 10; 
+  }
+
+}
+
+// Link Transitions.
+a{ @include single-transition(all, 0.5s) }

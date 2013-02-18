@@ -1,0 +1,210 @@
+// Z-Indices
+$header-z: 10;
+
+//  A couple of little helpers to help us with
+//  maintain the width of our sidemast.
+@mixin side-mast-full-width(){ @include pad(1,1);  }
+@mixin side-mast-snap-left-width(){ @include pad(0,0); @include span-columns(4, 12) }    
+
+
+//    The side-mast is a dynamic/responsive element.
+//    At large widths, it's a side-snapped bar.
+//    At small widths, it's a mast head.
+//    Hence, side-mast.
+.side-mast { 
+  position: absolute; left: 0; right: 0; 
+  * { @include single-transition(all, 0) }
+
+  @include query-at($nav-breakpoint){
+    @include side-mast-full-width();
+    position: relative;
+    float: left;
+    margin-right: 0;
+    margin-bottom: $base-space*4;
+  }
+
+  //  Get our side-mast to respond - this as well as  div[role="main"] will 
+  //  adjust at $breakpoint-3 (see _media.scss)
+  @include query-at($main-breakpoint){
+    @include side-mast-snap-left-width();
+    height: 100%;
+    position: fixed;
+  }
+
+  @include mixed-query-at($main-breakpoint, $breakpoint-3) {
+    position: absolute;
+  }
+
+  header{
+    text-align: center;
+    background: rgba($tan-grey, 0.95);
+    height: 65px;
+    border-bottom: 8px solid $secondary-color;
+    @include box-shadow(0px 2px 0 $secondary-color - 30, 0px 4px 10px rgba($secondary-color - 100, 0.6) );
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: $header-z;
+
+    @include query-at($nav-breakpoint){
+      width: 100%;
+      position: absolute;
+      background: none;
+      height: auto;
+      padding-top:    $base-space;
+      padding-bottom: $base-space;
+      position: static;
+      border: none;
+      @include box-shadow(0 0 0 white);
+    }
+
+    @include query-at($main-breakpoint){
+      width: 200px;
+      @include prefix(1);
+      @include post(2);
+      padding-top:    0;
+      padding-bottom: 0;
+      float: right;
+      text-align: left;
+    }
+
+    @include query-at($breakpoint-4){
+      width: 270px;
+      @include post(2);
+    }
+
+    @include query-at($breakpoint-5){
+      width: 300px;
+      @include post(2);
+    }
+
+    a.logo-wrap{
+     display: none;
+
+
+      @include query-at($nav-breakpoint){
+        background: $secondary-color;
+        height: 7em; width: 7em;
+        margin: 0 auto $base-space auto;
+        padding: 1.4em;
+        display: block;
+        position: relative;
+        float: none;
+        @include border-radius(3.5em);
+        @include box-shadow(1px 1px 0 $secondary-color - 30, 1px 3px 6px rgba($secondary-color - 100, 0.6) );
+
+        img{
+          width: 100%;
+          height: 100%;
+          @include filter( invert(100%) opacity(95%) drop-shadow(0 1px 1px $secondary-color - 60) );
+        }
+
+      }
+
+      @include query-at($main-breakpoint){
+        margin: 0 0 $base-space/2 0;
+      }
+
+    }
+
+    a.nav-icon-wrap{
+      float: right;
+      width: 50px;
+      i:before{ font-size: 1.8em; line-height: 1.9em; color: $base-headingfont-color; }
+      @include query-at($nav-breakpoint){ display: none }
+    }
+
+    h1{
+      margin-bottom: 0;
+      margin-left: 15px;
+      padding: 0;
+      position: relative;
+      letter-spacing: 1px;
+      font-size: 2.2em;
+      line-height: 1.75;
+      color: white;
+      float: left;
+
+      img{ height: 0.8em; margin-top: -6px; }
+
+      @include query-at($nav-breakpoint){
+        position: static;
+        font-size: 2.3em;
+        line-height: 2;
+        float:  none;
+        margin-left: 0;
+        max-width: none;
+        overflow: visible;
+
+        img{ display: none; }
+      }
+
+      @include query-at($main-breakpoint){
+        font-size: 2.5em;
+        margin-left: -5px;
+      }
+
+      @include query-at($breakpoint-4){
+        font-size: 3.2em;
+      }
+
+      a.site-title, a.site-title:hover, a.site-title:visited{
+        font-weight: 900;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $base-headingfont-color;
+
+        @include query-at($nav-breakpoint){ color: $base-headingfont-color; }
+      }
+    }
+
+    .tagline{ 
+      font-weight: normal;
+      font-style: normal;
+      display: block;
+      float: left;
+      background: $secondary-color;
+      color: white;
+      border-top: 1px solid rgba(white, 0.1);
+      display: none;
+      padding: $gutter-width;
+
+      @include query-at($nav-breakpoint){ 
+        display: block;
+        border: none;
+        background: none;
+        color: $text-color + 80;
+        padding: 0;
+        margin-top: 0;
+      }
+    }
+
+    // Let's import our nav here, which will 
+    // live inside of our side-mast
+    @import "partials/nav";
+  }
+
+}
+
+//  Our full width faux-column.. pretty snazzy, eh?
+// 
+.side-mast:after{
+  // @include side-mast-full-width();
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 2%; right: 2%;
+  border-bottom: 1px solid $tan-grey - 10;
+  z-index: -1;
+  display: none;
+
+  @include query-at($nav-breakpoint){ display: block; }
+
+  @include query-at($main-breakpoint){
+      position: fixed;
+      top: 8%; bottom: 20%;
+      right: 0; left: 0;
+      @include side-mast-snap-left-width();
+      border: 0;
+      border-right: 1px solid $tan-grey - 10;
+  }
+
+};

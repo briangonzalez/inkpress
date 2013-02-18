@@ -1,0 +1,29 @@
+- @title = 'Settings'
+
+!!!
+/[if lt IE 7]   <html class="no-js lt-ie9 lt-ie8 lt-ie7">  
+/[if IE 7]      <html class="no-js lt-ie9 lt-ie8">  
+/[if IE 8]      <html class="no-js lt-ie9">  
+/[if gt IE 8]>  <html class="no-js">
+
+%head
+  = partial "partials/head"
+
+%body.admin
+  .admin-edit-page.inkpress-settings
+
+    .controls
+      %a.control.recompile{ :href => '#', :title => "Recompile Site." }
+        %i{ :class => 'icon-refresh' }
+      %a.control.exit{ :href => '/', :title => "Close." }
+        %i{ :class => 'icon-remove' }
+
+      .saves-automatically
+        Saves automatically
+      .save-progress
+        .bar
+
+    %textarea.code= raw_page_content(true)
+
+= partial "partials/footer_js"
+= partial "partials/ga"

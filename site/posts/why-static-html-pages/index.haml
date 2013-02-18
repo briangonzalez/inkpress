@@ -1,0 +1,34 @@
+---
+title:    Why Static HTML Pages??
+author:   Brian Gonzalez
+date:     February 10, 2013
+---
+
+:markdown
+  
+  Rendering pages down to static HTML allows pages to be served securely at a blazingly fast rate. Using [Siege](http://linux.die.net/man/1/siege), an HTTP stress-tester, we can benchmark a local instance and verify that Inkpress is indeed ready to handle your article making the front page of [Hacker News](http://news.ycombinator.com).  
+
+  Let's hammer a local instance of Inkpress with __100 concurrent connections for 30 seconds__.
+
+  Note that Inkpress does not send static files in development mode, only in production -- hence the `?send-static=1` param to force Inkpress to emulate production:
+
+      siege -c100 -t30s  -v http://localhost:6789/posts/what-is-inkpress?send-static=1
+    {:lang=shell}
+
+  ...and the result...
+
+      Transactions:               5324 hits
+      Availability:               100.00 %
+      Elapsed time:               29.59 secs
+      Data transferred:           10.56 MB
+      Response time:              0.05 secs
+      Transaction rate:           179.93 trans/sec
+      Throughput:                 0.36 MB/sec
+      Concurrency:                8.59
+      Successful transactions:    5324
+      Failed transactions:        0
+      Longest transaction:        0.51
+      Shortest transaction:       0.00
+    {:lang=generic}
+
+  That's right --- 5,324 hits, __0 failed requests__.

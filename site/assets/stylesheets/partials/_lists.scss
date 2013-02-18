@@ -1,0 +1,19 @@
+// Base list styles.
+ul,
+ol {
+  margin: 0 0 $base-space -$gutter-width;
+  padding: 0 0 0 $base-space; 
+}
+
+div[role="main"]{
+
+  ul, ol{
+    margin-left: 0;
+    margin-bottom: $base-space*1.2;
+    overflow: visible;
+  }
+
+  ul{
+    li{ list-style-type: square; }
+  }
+}

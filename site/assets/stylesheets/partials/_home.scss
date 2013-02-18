@@ -1,0 +1,42 @@
+body.home{
+
+  div[role="main"]{
+    section{
+      @include clearfix;
+      padding-bottom: $base-space;
+      border-bottom: 1px solid $super-lightgrey; 
+
+      & h2:not(:first-child) { margin-top: $base-space; }
+      &:last-of-type      { border: 0; padding-bottom: 0; }
+
+      ul{
+        padding: 0;
+        margin: 0;
+
+        li{
+          list-style-type: none;
+          &:not(:first-child){ margin-top: $base-space/5 }
+
+          a, a:hover, a:visited{
+            color: $text-color;
+            border-bottom: 1px solid $primary-color;
+            line-height: 1.1;
+            @include border-radius(0);
+
+            &:hover{ color: $primary-color; };
+          }
+
+          time{
+            display: block;
+            color: $lightgrey - 50;
+            font-size: 0.75em;
+          }
+
+        }
+      }
+
+
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+
+//  These are our breakpoints.
+//
+$breakpoint-1:     320px;
+$breakpoint-2:     600px;
+$breakpoint-3:     768px;
+$breakpoint-4:     992px;
+$breakpoint-5:     1382px;
+$breakpoint-6:     1700px;
+
+//  The breakpoint where ish hits the fan.
+$main-breakpoint:   $breakpoint-4;
+
+// The breakpoint in which our nav gets small
+$nav-breakpoint:  $breakpoint-2;
+
+//  This mixin is epic.
+//  Use it inline anywhere you want an
+//  element to respond to a certain breakpoint.
+@mixin query-at($breakpoint) {
+  @media (min-width: $breakpoint) { @content; }
+}
+
+@mixin mixed-query-at($width-breakpoint, $height-breakpoint) {
+  @media (min-width: $width-breakpoint) and (max-height:$height-breakpoint) { @content; }
+}
+
+.media-query-breakpoints{
+  content: $breakpoint-1 + "," + $breakpoint-2 + "," + $breakpoint-3 + "," + $breakpoint-4 + "," + $breakpoint-5 + "," + $breakpoint-6;
+  width: $nav-breakpoint;
+  position: absolute;
+  top: -1000px;
+  bottom: -1000px;
+  opacity: 0;
+}

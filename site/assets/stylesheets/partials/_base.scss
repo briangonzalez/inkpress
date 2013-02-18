@@ -1,0 +1,56 @@
+/* 
+ * THE "BASIS" OF THE SITE'S DESIGN
+ * ========================================================================== */
+
+html, body{ overflow-x: hidden; }
+
+body {
+  background: $bg-color;
+  color: $text-color;
+  padding: 0;
+  margin: 0;
+  line-height: $base-line-height;
+  @include border-box-sizing;
+  @include clearfix;
+
+  &:not(.admin)::after{
+    content: '';
+    background: transparent;
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+    border: 1em solid $lightgrey - 10;
+    pointer-events: none;
+
+    border: none;
+    @include query-at($nav-breakpoint){ border: 12px solid $super-lightgrey }
+  }
+  
+  font: {
+    family: $base-font;
+    weight: $base-font-weight;
+  }
+
+  //  By setting the font-size on our body 
+  //  and using em's everywhere else,
+  //  we'll have a really nice scalable site.
+  @include query-at($breakpoint-1){ font-size: 92%; }
+  @include query-at($breakpoint-4){ font-size: 96%; }
+  @include query-at($breakpoint-6){ font-size: 100%; }
+
+}
+
+//  Our selection color should be 
+//  based on our original color scheme. 
+::selection, ::-moz-selection {
+  background: $primary-color;
+  color: white;
+}
+
+hr{
+  display: block;
+  background: $super-lightgrey;
+  height: 1px;
+  width: 100%;
+  border: none;
+  border-top: 1px solid $super-lightgrey;
+  margin: 0.5em 0;
+}

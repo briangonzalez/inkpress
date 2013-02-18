@@ -1,0 +1,14 @@
+
+//  Give all of our headings their own style.
+
+p{
+  margin-bottom : $base-line-height/1.3;
+}
+
+h2{
+  font-weight:      400;
+  margin-top:       $base-space;
+}
+
+h1, h2, h3, h4, h5, h6
+  { @include single-transition(all, 0.1s, cubic-bezier(0.215, 0.610, 0.355, 1.000)) }

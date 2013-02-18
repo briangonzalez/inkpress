@@ -1,0 +1,10 @@
+---
+title:    Put the title of your post here
+author:   <author>
+date:     <date>
+flags:    ['no-publish']
+---
+
+:markdown
+  
+  Write your post in markdown, here.

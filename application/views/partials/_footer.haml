@@ -1,0 +1,20 @@
+%footer
+
+  - if !should_compile? and logged_in?
+    .user
+      %i{ :class => 'icon-circle' }
+      %a{:href => "#"}
+        = user
+  - else
+    .login
+      %i{ :class => 'icon-circle-blank' }
+      %a{:href => "#"}
+        login
+
+  %a.description{ :href => 'http://inkpress.briangonzalez.org/getting-started', :target => '_blank' }
+    = "an Inkpress site"
+
+  / %span.copyright
+  / = "© #{Time.now.year.to_s}"
+  
+  %img.logo{ :src => image_path('user/logo.svg')}

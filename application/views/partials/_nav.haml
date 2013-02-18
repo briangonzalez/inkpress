@@ -1,0 +1,7 @@
+
+%nav.main
+  %ul
+    - app(:nav).each_pair do |title, path|
+      %li
+        %a{ :href => "#{path.strip}", :class => current?(path) ? 'current' : '' }
+          = "#{title}"

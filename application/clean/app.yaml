@@ -1,0 +1,17 @@
+--- 
+site: Inkpress
+tagline: A small, lightweight, dead simple content management system built on free & open source technologies
+ga: UX-XXXXXX
+twitter: twitter_handle
+repo_url: <your repo>
+authorized_users: 
+  test: 05a671c66aefea124cc08b76ea6d30bb
+google_fonts_families:
+  - Source+Code+Pro:400,700
+  - Lato:300,400,700,900
+  - PT+Sans:400,700,400italic,700italic
+nav: 
+  Home: " /home"
+  About: " /about"
+  Twitter: http://twitter.com/
+  Github: http://github.com/

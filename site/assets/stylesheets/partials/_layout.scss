@@ -1,0 +1,19 @@
+/* 
+ * LAYOUT
+ * =================================================== */
+
+.container      { 
+  @include container; 
+  max-width: none;
+  width: 100%;  
+  padding-left: $grid-padding/4;
+  padding-right: $grid-padding/4;
+
+
+  @include query-at($nav-breakpoint)  { padding-left: $grid-padding; padding-right: $grid-padding; }
+  @include query-at($main-breakpoint) { 
+    &.primary   { padding-top: $base-space*4 } 
+  }
+
+  &.show-grid { @include susy-grid-background; }
+}

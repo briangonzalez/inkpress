@@ -1,0 +1,16 @@
+
+- if titleize?
+  .title
+    
+    .meta
+      - if @date
+        %time=  @date
+
+      - if @author
+        %span.between= "//"
+        %span.author= @author
+
+      - if @date and @author
+        %hr
+
+      %h1=    @title

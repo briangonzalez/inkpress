@@ -1,0 +1,70 @@
+
+a.button, a.button:visited {
+
+  background: $primary-color + 2;
+  color:      $button-color; 
+  padding:    0.5em 0;
+  display:    inline-block;
+  margin:     0.75em 0 0 0;
+  text-align: center;
+  text-shadow: 0 1px 2px $primary-color - 30;
+  font-size: 100%;
+  font-family: $base-heading-font;
+  text-transform: uppercase;
+  display: block;
+  float: none;
+  cursor: pointer;
+
+  border: 1px solid rgba($primary-color - 10, 0.2);
+  @include border-radius($button-border-radius);
+  @include background-image( 
+    linear-gradient(top, $primary-color + 15, $primary-color - 3)
+  );
+
+  @include query-at($nav-breakpoint){
+    display: inline-block;
+    margin:  0.4em 0.4em 0 0;
+    padding:    0.5em 4em;
+  }
+
+}
+
+a.button:hover {
+  color: $button-color;
+  background: $primary-color + 10;
+  @include background-image( 
+    linear-gradient(top, $primary-color + 20, $primary-color)
+  );
+  text-shadow: 0 1px 2px $primary-color - 75;
+}
+
+button:active, 
+.button:active {
+  @include single-transition(all, 100ms);
+  @include transform( translateY(2px) );
+}
+
+
+// Small Versions
+a.button.small, a.button.small:visited{
+  @include query-at($nav-breakpoint){
+    padding:    0.5em 2em;
+  }
+}
+
+// Extend it all for our main content 
+// to get the scoping correct.
+div[role="main"]{
+  a.button, a.button:visited{
+    @extend a.button;
+  }
+
+  a.button:hover{
+    @extend a.button:hover;
+  }
+
+  button:active, 
+  .button:active {
+    @extend button:active;
+  }
+}

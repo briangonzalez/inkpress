@@ -1,0 +1,22 @@
+//
+//    The New BulletProof @font-face syntax.
+//    http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
+//
+
+
+
+
+//
+//      Here's an example
+//
+
+//      @font-face {
+//          font-family: 'my font';
+//          src: font_url('my-font.eot');
+//          src: font_url('my-font.eot?#iefix')   format('embedded-opentype'),
+//               font_url('my-font.woff')  format('woff'),
+//               font_url('my-font.ttf')   format('truetype'),
+//               font_url('my-font.svg')   format('svg');
+//          font-weight: normal;
+//          font-style: normal; }
+

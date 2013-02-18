@@ -1,0 +1,19 @@
+
+%script{ :src => javascript_path('inkpress-libs') }
+%script{ :src => javascript_path('inkpress-routes')}
+%script{ :src => javascript_path('inkpress')}
+
+/ Add in our admin-specific javascript -- but don't add it in
+/ if we're logged out or about to compiled the page. 
+
+- if !should_compile? and logged_in?
+  %script{ :src => javascript_path('inkpress-admin')}
+
+  :javascript
+    $(document).ready(function(){
+      $.ink.admin.user          = "#{user}";
+      $.ink.admin.edit          = {}; 
+      $.ink.admin.edit.path     = "#{request.path}"; 
+      $.ink.admin.edit.page     = "#{ editing_settings? ? 'app.yaml' : false }" 
+      $.ink.admin.edit.editing  = "#{editing?}"
+    });

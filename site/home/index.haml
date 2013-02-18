@@ -1,0 +1,30 @@
+- @title = 'Home'
+
+- posts = post_titles_and_info
+
+- if posts.length > 0
+  - posts.each do |p|
+    
+    - unless p[0] == 0
+
+      %section
+        %h2
+          = p[0] # The year
+
+        %ul
+          - p[1].each do |post|
+            - if ( post[:title] and post[:date] != 'January 1, 0000' )
+              %li
+                %a{ :href => "/posts/#{post[:path]}" }
+                  = post[:title]
+                %time
+                  = post[:date]
+- else
+  %p.no-posts
+    No posts to display.
+
+    - if logged_in? and compiled_page_exists?
+      %a.new-page-or-post{ href: '#' }= "Create a new post or page."
+      
+    - else
+      %a.login{ href: '#' }= "Login to get started."

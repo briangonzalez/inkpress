@@ -1,0 +1,65 @@
+a.admin-button, a.admin-button:visited {
+
+  font-weight: bold;
+  padding:    0.8em 0;
+  display:    inline-block;
+  margin:     0.75em 0 0 0;
+  text-align: center;
+
+  font-size: 110%;
+  display: block;
+  float: none;
+  cursor: pointer;
+
+  color: white;
+  background: $darkgrey;;
+
+  @include border-radius($button-border-radius);
+  @include single-transition(background, 300ms);
+
+  @include query-at($nav-breakpoint){
+    display: inline-block;
+    margin:  0.4em 0.4em 0 0;
+    padding:    0.75em 4em;
+  }
+
+  &.full{ width: 100% }
+  &.full-margin{ width: 100% }
+}
+
+a.admin-button:hover { background: $admin-darkgrey }
+
+
+// Admin Close Buttons
+a.admin-button.close, a.admin-button.close:visited {
+  background: $admin-lightgrey + 50;
+  color: $admin-darkgrey;
+
+  &.light{ color: $admin-darkgrey; background: white; }
+}
+
+a.admin-button.close:hover {
+  background: $admin-lightgrey + 30;
+}
+
+// Admin New / Empty Buttons
+a.admin-button.new, a.admin-button.empty, a.admin-button.new:visited, a.admin-button.empty:visited {
+  background: white;
+  border: 5px solid $admin-darkgrey;
+  color: $admin-darkgrey;
+}
+
+a.admin-button.new:hover, a.admin-button.empty {
+  background: $admin-darkgrey;
+  color: white;
+}
+
+// Admin Danger Buttons
+a.admin-button.danger, a.admin-button.danger:visited {
+  background: $admin-red;
+}
+
+a.admin-button.danger:hover{
+  background: $admin-red - 40;
+  color: white;
+}

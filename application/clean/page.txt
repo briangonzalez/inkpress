@@ -1,0 +1,10 @@
+---
+title:    Put the page title here
+author:   --                                 # do you ..
+date:     --                                 # .. need these?
+flags:    ['titleize']                       # Only if titleizing. Remove this flag for no/custom title. 
+---
+
+:markdown
+  
+  Write your post in markdown, here.

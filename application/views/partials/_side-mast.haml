@@ -1,0 +1,17 @@
+.side-mast
+  %header
+    %a.nav-icon-wrap{ :href => '#' }
+      %i.icon-reorder
+
+    %a.logo-wrap{ :href => '/' }
+      %img{ :src => image_path('user/logo.svg')}
+    
+    %h1
+      %a.site-title{:href => "/"}
+        %img{ :src => image_path('user/logo.svg')}
+        = app(:site)
+
+    %span.tagline
+      = app(:tagline)
+
+    = partial "partials/nav"

@@ -1,0 +1,34 @@
+
+<div class='ink-admin-dialog'>
+  
+  <header>
+    <h2>Choose File / Create New</h2>
+  </header>
+
+  <div class='content'>      
+
+    <a class='admin-button full action new'>
+      New File
+    </a>
+
+    {% _.each(files, function(file){ %}
+
+      {% if (file[0] == 'index_preview.haml'){ %}
+        <a class='admin-button full action file' data-file={{ file[1] }} data-main='true'>
+      {% } else { %}
+        <a class='admin-button full action file' data-file={{ file[1] }}>
+      {% } %}
+      
+        {% if (file[0] == 'index_preview.haml'){ %}  
+          Index
+        {% } else { %}
+          {{ file[0] }}
+        {% } %}
+      
+      </a>
+    {% }); %}
+
+    <a class='admin-button full action close'>Close</a>
+  </div>
+
+</div>

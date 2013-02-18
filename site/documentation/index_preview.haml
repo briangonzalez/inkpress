@@ -1,0 +1,162 @@
+---
+title:    Inkpress Docs
+flags:    ['titleize']
+---
+
+:markdown
+
+  ## Installation & Setup
+
+  More info on getting up on running can be found on the [Getting Started](/getting-started) page.
+
+  [Getting Started with Inkpress](/getting-started){:class="button"}
+
+  ## Advanced Content Editing  
+
+  All posts can either be written in [HAML](http://haml.info/) and/or [Markdown](http://daringfireball.net/projects/markdown/). In order to write in Markdown, place your content under the `:markdown` filter. For example:
+
+      / HAML content
+      - 10.times do |i|
+        = i + 10
+
+      / Now some markdown.
+      :markdown
+        ## Look at me!
+      
+      / Back to HAML
+      = cool_helper
+    {:lang=ruby}
+
+%h6
+  %i.icon-save
+  Saving and Previewing Posts/Pages
+
+:markdown
+
+  It's really simply to edit pages in real time --- simply start typing. 
+
+  As you type, Inkpress constantly saves a preview of what you write. When you click the save icon, Inkpress automatically saves and recompiles your static HTML files. That's right -- _no manual compilation step_. If you're not ready for your changes/content to go live, there are two options:
+
+  1. If it's a post, flag it as no-publish in the Front Matter: `flags: ['no-publish']`. This will disable the post altogether and you'll have to remove the flag to see the post go live.
+  2. __Don't click the Save icon__ --- clicking the Save icon transfers your data from the preview file (`index_preview.haml`) to the main index (`index.haml`) file, and it sets up your page to be recompiled on the next request. Remember, your content is always safely stored in a preview file -- don't click Save until you're ready to go live.  
+
+%h6
+  %i.icon-folder-open
+  The Directory Hierarchy
+
+:markdown
+  Each page/post on Inkpress has two files main files -- an index file and a preview file -- both of which live inside the main `content` directory: 
+
+      content
+        \_ about
+          \_ index.haml
+          \_ index_preview.haml
+        \_ posts
+          \_ getting-started
+            \_ index.haml
+            \_ index_preview.haml
+            \_ some_associated_file.js
+
+  ###### The Controls
+
+  The controls in the Inkpress editor perform the following actions
+
+%ul
+  %li
+    %i.icon-eye-open
+    \- Toggle the preview pane, aliased to <code>CMD + P</code>
+  %li
+    %i.icon-save
+    \- Save & Recompile the page
+  %li
+    %i.icon-folder-open
+    \- Create/Navigate the associated files
+  %li
+    %i.icon-link
+    \- Create a new short URL
+  %li
+    %i.icon-resize-full
+    \- Enter Zen editing mode
+  %li
+    %i.icon-remove
+    \- Close Editor 
+
+%h6
+  %i.icon-file
+  Creating an Associated File
+
+:markdown
+  Every page/post in Inkpress has the concept of _associated files_. A new page/post has no associated files, an a page/post can have 0 to many associate files. 
+
+  To create a new associated file, click the folder icon at the top of the page, then click "New File".
+
+  Including the new associated file is simple. For example, to include some Javascript code in your page first create the associated file. Let's call it `hello.js`. Insert, for instance, `console.log('Hi.')` into `hello.js` then include that file in your post like so:
+
+      # Hello, Inkpress
+      Lo rem. Ip sum?
+
+        { file: hello.js}
+    {:lang=markdown}
+
+  This will get compiled down to:
+
+      <h1>Hello, Inkpress</h1>
+      <p>Lo rem. Ip sum?</p>
+      <pre>
+        <code>
+          console.log('Hi.')
+        </code>  
+      </pre>
+     {:lang=html}
+  
+  
+  ###### Front Matter
+
+  All Inkpress content has what's called [YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter). This is the portion of YAML-formatted code between the `---`. For example, the Front Matter for a post might look like:
+
+      ---
+      title:  Some title
+      author: Name
+      date:   February 11, 1990
+      ---
+
+      :markdown
+        The rest of your post's content goes here.
+
+%h6
+  %i.icon-flag
+  Flags
+
+:markdown
+  In the front matter of your page/post, you can write various flags. You can think of flags as local settings for a certain page or post:
+
+      no-publish      # don't publish post to home page
+      titleize        # create pretty titles (all posts titleized by default)
+    {:lang=ruby}
+
+  To use flags, add an array to your front matter called `flags`:
+        
+      ---
+      flags: ['no-publish']
+      ---
+
+  ## Editing Inkpress Settings
+
+  Inkpress stores your app's settings in a YAML file (remember, no databases!). To edit your settings, open the Actions dialog then click "Settings".
+
+  Any non-default key/value pair added to your site's settings can be accessed from anywhere within your content using the following HAML helper. For instance:
+
+      app(:author) # => Some Author
+    {:lang=ruby}
+
+  ## Uploading Images & Files 
+
+  Open the Actions dialog and click "Upload a File". Simply drag your file into the drop area or select it manually.
+
+  ## Creating a Short URL
+
+  Open the Actions dialog, click "Make a Short URL", then paste in your URL. Voila!
+
+  ## More to come!
+
+  These docs are by no means complete and they only touch the service of what Inkpress has to offer. Stay tuned for updated docs.
