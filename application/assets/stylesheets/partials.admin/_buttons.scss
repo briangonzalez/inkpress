@@ -14,7 +14,7 @@ a.admin-button, a.admin-button:visited {
   color: white;
   background: $darkgrey;;
 
-  @include border-radius($button-border-radius);
+  @include border-radius(5px); 
   @include single-transition(background, 300ms);
 
   @include query-at($nav-breakpoint){
