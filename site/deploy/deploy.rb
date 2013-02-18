@@ -3,13 +3,13 @@
 case ENV['DEPLOY']
 when 'production'
   puts ' ** Deploy to production  **************************************'
-  set :domain, "<prod>"
-  set :application, "<prod>"
+  set :domain, "inkpress.briangonzalez.org"
+  set :application, "inkpress.briangonzalez.org"
 else
   # Deploy to staging by default.
   puts ' ** Deploying to stage **************************************'
-  set :domain, "<stage>"
-  set :application, "<stage>"
+  set :domain, "stage-inkpress.briangonzalez.org"
+  set :application, "stage-inkpress.briangonzalez.org"
 end
 
 # Be sure to set your remote repo URL in ./app.yaml
@@ -42,8 +42,10 @@ namespace :deploy do
   task :stop do ; end
   
   task :create_logs do
+    logs    = File.join(deploy_to, 'logs')
     access  = File.join(deploy_to, 'logs', 'access.log')
     error   = File.join(deploy_to, 'logs', 'error.log')
+    run "if [ ! -f #{logs} ]; then #{try_sudo} mkdir #{logs}; fi"
     run "if [ ! -f #{access} ]; then #{try_sudo} touch #{access}; fi"
     run "if [ ! -f #{error} ];  then #{try_sudo} touch #{error}; fi"
   end
