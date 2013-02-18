@@ -90,7 +90,7 @@ $header-z: 10;
         float: none;
         text-align: center;
         @include border-radius(3.5em);
-        @include box-shadow(1px 1px 0 $secondary-color - 30, 1px 3px 6px rgba($secondary-color - 100, 0.6) );
+        @include box-shadow(1px 1px 0 $secondary-color - 30, 1px 3px 6px rgba($secondary-color - 100, 0.2) );
 
         img{
           height: 100%;
