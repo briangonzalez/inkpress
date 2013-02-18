@@ -88,11 +88,11 @@ $header-z: 10;
         display: block;
         position: relative;
         float: none;
+        text-align: center;
         @include border-radius(3.5em);
         @include box-shadow(1px 1px 0 $secondary-color - 30, 1px 3px 6px rgba($secondary-color - 100, 0.6) );
 
         img{
-          width: 100%;
           height: 100%;
           @include filter( invert(100%) opacity(95%) drop-shadow(0 1px 1px $secondary-color - 60) );
         }
