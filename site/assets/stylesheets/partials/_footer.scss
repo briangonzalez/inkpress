@@ -25,7 +25,7 @@ div[role='main']{
       position: absolute; top: 95%; left: 50%;
       display: block;
       margin-right: -0.6em;
-      width: 16px; height: 16px;
+      height: 16px;
       text-align: center;
       @include filter(opacity(30%))
     }
