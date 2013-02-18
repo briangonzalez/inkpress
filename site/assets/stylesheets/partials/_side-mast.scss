@@ -40,7 +40,7 @@ $header-z: 10;
     background: rgba($tan-grey, 0.95);
     height: 65px;
     border-bottom: 8px solid $secondary-color;
-    @include box-shadow(0px 2px 0 $secondary-color - 30, 0px 4px 10px rgba($secondary-color - 100, 0.6) );
+    @include box-shadow(0px 2px 0 $secondary-color - 30, 0px 4px 10px rgba($secondary-color - 100, 0.3) );
     position: fixed; top: 0; left: 0; right: 0;
     z-index: $header-z;
 
