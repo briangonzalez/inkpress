@@ -1,5 +1,3 @@
--# coding: utf-8
-
 ---
 title: Getting Started with Inkpress
 flags: 'titleize'      
@@ -12,10 +10,11 @@ flags: 'titleize'
 
   To install Inkpress locally, run the following commands in the terminal:
 
-      $ > git clone ---
+      $ > git clone https://github.com/briangonzalez/inkpress
       $ > cd inkpress
       $ > bundle install
-      $ > rake start 
+      $ > rake ink:clean     # sets up new Inkpress site
+      $ > rake ink:start         # fires up the Inkpress server
     {:lang=shell}
 
   It's assumed you have local & up-to-date copies of [Ruby](https://rvm.io/) & [Git](http://git-scm.com/) on your machine.
