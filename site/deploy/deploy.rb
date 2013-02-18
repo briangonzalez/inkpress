@@ -45,7 +45,7 @@ namespace :deploy do
     logs    = File.join(deploy_to, 'logs')
     access  = File.join(deploy_to, 'logs', 'access.log')
     error   = File.join(deploy_to, 'logs', 'error.log')
-    run "if [ ! -f #{logs} ]; then #{try_sudo} mkdir #{logs}; fi"
+    run "if [ ! -d #{logs} ]; then #{try_sudo} mkdir #{logs}; fi"
     run "if [ ! -f #{access} ]; then #{try_sudo} touch #{access}; fi"
     run "if [ ! -f #{error} ];  then #{try_sudo} touch #{error}; fi"
   end
