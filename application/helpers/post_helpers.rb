@@ -44,6 +44,24 @@ module Sinatra
       titles_and_info
     end
 
+    def unpublished_posts
+      posts_path  = File.join( settings.site_folder, 'posts' )
+      post_dirs   = Dir.glob( File.join( posts_path, '**/') )
+
+      unpublished = []
+      post_dirs.each do |post_path|
+        next if post_path == posts_path + '/'
+
+        raw = File.read File.join(post_path, "index.haml")
+        front_matter = parse_front_matter(raw)[:yaml]
+        next unless (front_matter['flags'] and front_matter['flags'].include? 'no-publish')
+
+        unpublished << File.basename(post_path)
+      end
+
+      unpublished
+    end
+
   end
 
   helpers PostHelper

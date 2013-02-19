@@ -14,8 +14,9 @@
     = partial "partials/side-mast"
 
     %div{ :role => "main" }
-      = partial 'partials/title'
-      = yield
+      %article
+        = partial 'partials/title'
+        = yield
       = partial "partials/footer"
 
 = partial "partials/footer_js"

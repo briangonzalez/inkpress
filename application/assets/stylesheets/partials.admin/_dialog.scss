@@ -97,7 +97,7 @@
       }
     }
 
-    & a.admin-button.full:first-of-type{
+    & a.admin-button.full:first-of-type:not(.full-margin){
       margin-top: 0;
     }
 

@@ -1,0 +1,23 @@
+
+<div class='ink-admin-dialog'>
+  
+  <header>
+    <h2>Unpublished Posts</h2>
+  </header>
+
+  <div class='content'>      
+    
+    {% if ( posts.length > 0 ) { %}
+      {% _.each(posts, function(obj){ %}
+        <a href='/posts/{{{ obj }}}?edit' class='admin-button full'>
+          /posts/{{{ obj }}}
+        </a>
+      {% }) %}
+    {% } else { %}
+      No unpublished posts.
+    {% }  %}
+
+    <a class='admin-button full-margin close'>Close</a>
+  </div>
+
+</div>

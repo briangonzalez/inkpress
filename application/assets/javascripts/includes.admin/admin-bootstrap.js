@@ -19,5 +19,6 @@ $(document).ready(function(){
   $.ink.admin.views.AddUser             = InkAdminAddUserDialog;
   $.ink.admin.views.ShortURL            = InkAdminShortURLDialog;
   $.ink.admin.views.UploadFile          = InkAdminUploadFileDialog;
+  $.ink.admin.views.Unpublished         = InkAdminUnpublishedDialog;
   
 });

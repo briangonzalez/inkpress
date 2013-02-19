@@ -49,6 +49,8 @@
 
   p{ overflow: visible; }
 
+  article img { width: 100%; }
+
   blockquote{
     border-left: 8px solid $primary-color;
     color: $text-color + 50;

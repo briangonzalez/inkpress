@@ -21,8 +21,12 @@ var InkApp = Backbone.View.extend({
   initialize: function(){
     // The ever elusive fullscreen hack.
     setTimeout(function(){ window.scrollTo(0, 0) }, 0);
-    this.setUnderscoreInterpolation();
+
     this.$smallNav      = this.$el.find('nav.main');
+    this.$imgs          = this.$el.find('div[role=main] article img');
+
+    this.setUnderscoreInterpolation();
+    this.scaleImages();
   },
 
   showLogin: function(ev){
@@ -100,6 +104,13 @@ var InkApp = Backbone.View.extend({
       this.closeDialog();
       break;
     }
+  },
+
+  scaleImages: function(){
+    $.each( this.$imgs, function(obj, el){
+      var $el = $(el);
+      $el.css({ maxWidth: $el.outerWidth() })
+    })
   }
 
 });

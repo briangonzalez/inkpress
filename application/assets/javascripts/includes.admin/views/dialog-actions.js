@@ -7,6 +7,7 @@ var InkAdminActionsDialog = Backbone.View.extend({
     events[ 'click' + ' .new' ]           = 'showNew',
     events[ 'click' + ' .edit-page' ]     = 'editPage',
     events[ 'click' + ' .delete-page' ]   = 'deletePage',
+    events[ 'click' + ' .unpublished' ]   = 'showUnpublished',
     events[ 'click' + ' .sync' ]          = 'showSync',
     events[ 'click' + ' .add-user' ]      = 'showAddUser',
     events[ 'click' + ' .app-settings' ]  = 'appSettings',
@@ -56,6 +57,10 @@ var InkAdminActionsDialog = Backbone.View.extend({
     }
   },  
 
+  showUnpublished: function(){
+    new $.ink.admin.views.Unpublished().render()
+  },
+
   showSync: function(){
     new $.ink.admin.views.Sync().render();
   },
@@ -71,6 +76,7 @@ var InkAdminActionsDialog = Backbone.View.extend({
   showShortURL: function(){
     new $.ink.admin.views.ShortURL().render();
   },
+
 
   showUploadFile: function(){
     new $.ink.admin.views.UploadFile().render();

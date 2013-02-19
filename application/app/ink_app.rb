@@ -30,19 +30,20 @@ class InkApp < Sinatra::Base
   helpers Sprockets::Helpers
 
   #   Configuration.
-  set :run,               false
-  set :show_exceptions,   development?
-  set :raise_errors,      development?
-  set :root,              './'
-  set :public_folder,     './public'
-  set :uploads_folder,    './public/uploads'
-  set :views,             './application/views'
-  set :clean_folder,      './application/clean'
-  set :short_url_folder,  './site/short'
-  set :site_folder,       './site'
-  set :logging,           true
-  set :static,            true                  # best case scenario: nginx/apache's job
-  set :haml,              :format => :html5
+  set :run,                 false
+  set :show_exceptions,     development?
+  set :raise_errors,        development?
+  set :root,                './'
+  set :public_folder,       './public'
+  set :uploads_folder,      './public/uploads'
+  set :views,               './application/views'
+  set :clean_folder,        './application/clean'
+  set :short_url_folder,    './site/short'
+  set :site_folder,         './site'
+  set :logging,             true
+  set :static,              true                  # best case scenario: nginx/apache's job
+  set :haml,                :format => :html5
+  set :protection, except:  :session_hijacking    # don't let session expire thaaat easily
 
   #   Sprockets setup.
   set :sprockets_root,  File.join( settings.root, 'application' )

@@ -4,7 +4,7 @@
 
 // -------------------------------------------------------------------
 
-//= require "includes/app"
+//= require "includes/app-bootstrap"
 //= require "includes/app-view"
 //= require "includes/code-view"
 //= require "includes/resizer"

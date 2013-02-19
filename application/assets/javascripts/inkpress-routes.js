@@ -10,6 +10,7 @@ $.ink.Routes  = {
     settings:               '/ink/admin/settings',
     savePage:               '/ink/admin/save-page',
     deletePage:             '/ink/admin/delete-page',
+    unpublished:            '/ink/admin/unpublished',
     recompile:              '/ink/admin/recompile',
     createPageOrPost:       '/ink/admin/create-page-or-post',
     createAssociatedFile:   '/ink/admin/create-associated-file',

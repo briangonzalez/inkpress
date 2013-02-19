@@ -103,6 +103,13 @@ module Sinatra
         FileUtils.rm_rf("#{ink_folder}/.", secure: true)
       end
 
+      app.post "/ink/admin/unpublished" do 
+        halt 403 unless logged_in?
+
+        content_type :json
+        return { msg: 'Success', posts: unpublished_posts }.to_json
+      end
+
       app.post "/ink/admin/create-page-or-post" do
         halt 403 unless logged_in?
 

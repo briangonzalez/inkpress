@@ -2,7 +2,6 @@
 Gemfile.lock
 .sass-cache
 public/assets
-public/ink_static
 tmp
 log
 REVISION

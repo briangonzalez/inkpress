@@ -26,7 +26,6 @@ module Sinatra
       data  = YAML.load(File.read(APP_VALUES_PATH))
       data['authorized_users'][name] = key unless data['authorized_users'][name] 
       File.open( APP_VALUES_PATH, "w") {|f| f.write(data.to_yaml) }
-      InkAdmin.reload_app_values
     end
 
     def self.get_app_values

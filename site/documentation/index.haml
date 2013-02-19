@@ -4,12 +4,18 @@ flags:    ['titleize']
 ---
 
 :markdown
+  ## Contents
+
+  1. [Installation & Setup](#)
+  2. [Advanced Content Editing](#)
+  3. [Editing Inkpress Settings](#)
+  4. [Uploading Images & Files](#)
+  5. [Creating Short URLs](#)
+  6. [Deploying your Inkpress Site](#)
+  7. [Syncing/Saving Your Inkpress Site](#)
 
   ## Installation & Setup
-
-  More info on getting up on running can be found on the [Getting Started](/getting-started) page.
-
-  [Getting Started with Inkpress](/getting-started){:class="button"}
+  Info on getting up on running can be found on the [Getting Started](/getting-started) page.
 
   ## Advanced Content Editing  
 
@@ -25,8 +31,7 @@ flags:    ['titleize']
       
       / Back to HAML
       = cool_helper
-    {:lang=ruby}
-
+    {:lang='haml & md'}
 %h6
   %i.icon-save
   Saving and Previewing Posts/Pages
@@ -96,6 +101,7 @@ flags:    ['titleize']
       Lo rem. Ip sum?
 
         { file: hello.js}
+    {:lang=markdown}
 
   This will get compiled down to:
 
@@ -109,10 +115,9 @@ flags:    ['titleize']
      {:lang=html}
   
   
-
   ###### Front Matter
 
-  All Inkpress content has what's called [YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter). This is the portion of YAML-formatted code between the `---`. For example, the Front Matter for a post might look like:
+  All Inkpress content has what's called [YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter). This is the portion of YAML-formatted code between the `---`. You can think of flags as local settings for a certain page or post. For example, the front matter for a post might look like:
 
       ---
       title:  Some title
@@ -128,14 +133,19 @@ flags:    ['titleize']
   Flags
 
 :markdown
-  In the front matter of your page/post, you can write various flags. You can think of flags as local settings for a certain page or post:
+  In the front matter of your page/post, you can write various flags. Inkpress currently support two flags:
 
       no-publish      # don't publish post to home page
       titleize        # create pretty titles (all posts titleized by default)
     {:lang=ruby}
 
-  ## Editing Inkpress Settings
+  To use flags, add an array to your front matter called `flags`:
+        
+      ---
+      flags: ['no-publish']
+      ---
 
+  ## Editing Inkpress Settings
   Inkpress stores your app's settings in a YAML file (remember, no databases!). To edit your settings, open the Actions dialog then click "Settings".
 
   Any non-default key/value pair added to your site's settings can be accessed from anywhere within your content using the following HAML helper. For instance:
@@ -144,13 +154,10 @@ flags:    ['titleize']
     {:lang=ruby}
 
   ## Uploading Images & Files 
-
   Open the Actions dialog and click "Upload a File". Simply drag your file into the drop area or select it manually.
 
-  ## Creating a Short URL
-
+  ## Creating Short URLs
   Open the Actions dialog, click "Make a Short URL", then paste in your URL. Voila!
 
   ## More to come!
-
   These docs are by no means complete and they only touch the service of what Inkpress has to offer. Stay tuned for updated docs.

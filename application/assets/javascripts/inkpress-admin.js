@@ -7,7 +7,7 @@
 //
 // -------------------------------------------------------------------
 
-//= require "includes.admin/core"
+//= require "includes.admin/admin-bootstrap"
 //= require "includes.admin/views/dialog-logout"
 //= require "includes.admin/views/dialog-new-page-or-post"
 //= require "includes.admin/views/dialog-new-associated-file"
@@ -18,6 +18,7 @@
 //= require "includes.admin/views/dialog-short-url"
 //= require "includes.admin/views/dialog-upload-file"
 //= require "includes.admin/views/dialog-edit-files"
+//= require "includes.admin/views/dialog-unpublished"
 //= require "includes.admin/views/edit-page"
 //= require "includes.admin/views/edit-settings"
 //= require "includes.admin/views/admin-app"
