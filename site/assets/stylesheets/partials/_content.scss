@@ -33,7 +33,7 @@
     @include query-at($breakpoint-5)  { font-size: 5em; }
   }
 
-  .title + h2{
+  .title + h2, h1 + h2{
     margin-top: 0;
   }
   h2{

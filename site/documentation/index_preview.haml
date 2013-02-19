@@ -6,13 +6,13 @@ flags:    ['titleize']
 :markdown
   ## Contents
 
-  1. [Installation & Setup](#)
-  2. [Advanced Content Editing](#)
-  3. [Editing Inkpress Settings](#)
-  4. [Uploading Images & Files](#)
-  5. [Creating Short URLs](#)
-  6. [Deploying your Inkpress Site](#)
-  7. [Syncing & Saving Your Inkpress Site](#)
+  1. [Installation & Setup](#installation__setup)
+  2. [Advanced Content Editing](#advanced_content_editing)
+  3. [Editing Inkpress Settings](#editing_inkpress_settings)
+  4. [Uploading Images & Files](#uploading_images__files)
+  5. [Creating Short URLs](#creating_short_urls)
+  6. [Deploying your Inkpress Site](#deploying_your_inkpress_site)
+  7. [Saving Your Inkpress Site](#saving_your_inkpress_site)
 
   ## Installation & Setup
   Info on getting up on running can be found on the [Getting Started](/getting-started) page.
@@ -159,10 +159,35 @@ flags:    ['titleize']
   ## Creating Short URLs
   Open the Actions dialog, click "Make a Short URL", then paste in your URL. Voila!
 
-  ## Deploying Your Inkpress Site
-  To come...
 
-  ## Syncing & Saving Your Inkpress Site
+  # Managing your site
+
+  ## Deploying Your Inkpress Site
+  Inkpress uses [Capistrano](http://capistranorb.com/) to make sure your latest code gets deployed to your servers. Unlike Wordpress which you can used FTP to deploy to shared hosting, deploying an Inkpress site requires some server knowledge. 
+
+  If you are already familiar with Capistrano, deploying your Inkpress site will be a breeze.
+
+  ###### 1. Setup
+    Capistrano `setup` ensures all of the correct folders are created and put in place on your server, which prepares your site for deployment. Capistrano `setup` only needs to be run once on each server your site will be deployed to.
+
+  To setup both your 
+ 
+      $ > cap deploy:setup                     # setup staging server
+      $ > DEPLOY=production cap deploy:setup   # setup production server
+    {:lang=shell}
+
+  ###### 2. Deploy
+  When deploying your site, it's always a good idea to verify you haven't broken anything by deploying __first__ to your staging server.
+ 
+      $ > cap deploy  # deploy to staging server
+    {:lang=shell}
+
+  .. and if all looks good..
+    
+      $ > DEPLOY=production cap deploy # deploy to production server
+    {:lang=shell}
+
+  ## Saving Your Inkpress Site
   To come...
 
   ## More to come!
