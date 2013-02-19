@@ -21,6 +21,8 @@ var InkCodeView = Backbone.View.extend({
 
     this.highlightCode();
     this.nameCode();
+    this.addFullScreenButtons();
+    this.bindFullScreenButtons();
   },
 
   highlightCode: function(){
@@ -35,7 +37,6 @@ var InkCodeView = Backbone.View.extend({
   },
 
   nameCode: function(){
-
     $.each( this.$el, function(idx, el){
       var $el   = $(el);
       var $pre  = $el.parents('pre');
@@ -45,7 +46,22 @@ var InkCodeView = Backbone.View.extend({
       $pre.append($name)
 
     });
+  },
 
+  addFullScreenButtons: function(){
+    $.each( this.$el, function(idx, el){
+      var $el   = $(el);
+      var $pre  = $el.parents('pre');
+
+      var $full = $("<i/>", { class: 'fullscreen icon-resize-full' })
+      $pre.append($full)
+    });
+  },
+
+  bindFullScreenButtons: function(){
+    $('pre code[lang]').parent().find('i.fullscreen').click(function(){
+      $(this).parent().toggleClass('expanded')
+    })
   }
 
 });

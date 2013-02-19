@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> >  <html class="no-js"> <![endif]-->
+<head>
+  <meta charset='utf-8'>
+<title>Inkpress Docs | Inkpress</title>
+<meta content='Inkpress: A small, lightweight, dead simple content management system built on free &amp; open source technologies.' name='A small, lightweight, dead simple content management system built on free &amp; open source technologies.'>
+<meta content='width=device-width' name='viewport'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<link href='/assets/user/favicon-905d116b0dbffeb9833a35670ddc4fe1.png' rel='icon'>
+<link href='/assets/user/apple-touch-icon-ee9802acfc69360b3a4df0160eebaa36.png' rel='apple-touch-icon-precomposed'>
+<!-- Include our main bootstrap css file, which includes -->
+<!-- everything we need to get up & running. -->
+<link href='/assets/inkpress-5fc81c8d2f2c5b9f734e9e6f8ba27e75.css' media='all' rel='stylesheet'>
+<!-- Google Web Fonts. -->
+<!-- Their free, use 'em.. -->
+<link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Lato:300,400,700,900|PT+Sans:400,700,400italic,700italic' media='all' rel='stylesheet'>
+<!-- jQuery! -->
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<!--[if lt IE 9]>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js'></script>
+<![endif]-->
+</head>
+<body class='documentation'>
+  <div class='container primary'>
+    <div class='side-mast'>
+  <header>
+    <a class='nav-icon-wrap' href='#'>
+      <i class='icon-reorder'></i>
+    </a>
+    <a class='logo-wrap' href='/'>
+      <img src='/assets/user/logo-60b04fe76a7d18c7c0b714fbb6b25bb5.svg'>
+    </a>
+    <h1>
+      <a class='site-title' href='/'>
+        <img src='/assets/user/logo-60b04fe76a7d18c7c0b714fbb6b25bb5.svg'>
+        Inkpress
+      </a>
+    </h1>
+    <span class='tagline'>
+      A small, lightweight, dead simple content management system built on free & open source technologies.
+    </span>
+    <nav class='main'>
+  <ul>
+    <li>
+      <a class='' href='/home'>
+        Home
+      </a>
+    </li>
+    <li>
+      <a class='' href='/getting-started'>
+        Getting Started
+      </a>
+    </li>
+    <li>
+      <a class='current' href='/documentation'>
+        Documentation
+      </a>
+    </li>
+    <li>
+      <a class='' href='/about'>
+        About
+      </a>
+    </li>
+    <li>
+      <a class='' href='http://twitter.com/brianmgonzalez'>
+        Twitter
+      </a>
+    </li>
+    <li>
+      <a class='' href='http://github.com/briangonzalez/inkpress'>
+        Github
+      </a>
+    </li>
+  </ul>
+</nav>
+  </header>
+</div>
+    <div role='main'>
+      <article>
+        <div class='title'>
+  <div class='meta'>
+    <h1>Inkpress Docs</h1>
+  </div>
+</div>
+        <h2 id='contents'>Contents</h2>
+
+<ol>
+<li><a href='#'>Installation &amp; Setup</a></li>
+
+<li><a href='#'>Advanced Content Editing</a></li>
+
+<li><a href='#'>Editing Inkpress Settings</a></li>
+
+<li><a href='#'>Uploading Images &amp; Files</a></li>
+
+<li><a href='#'>Creating Short URLs</a></li>
+
+<li><a href='#'>Deploying your Inkpress Site</a></li>
+
+<li><a href='#'>Syncing &amp; Saving Your Inkpress Site</a></li>
+</ol>
+
+<h2 id='installation__setup'>Installation &amp; Setup</h2>
+
+<p>Info on getting up on running can be found on the <a href='/getting-started'>Getting Started</a> page.</p>
+
+<h2 id='advanced_content_editing'>Advanced Content Editing</h2>
+
+<p>All posts can either be written in <a href='http://haml.info/'>HAML</a> and/or <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>. In order to write in Markdown, place your content under the <code>:markdown</code> filter. For example:</p>
+
+<pre lang='haml &amp; md'><code class='haml &amp; md' lang='haml &amp; md'>/ HAML content&#x000A;- 10.times do |i|&#x000A;  = i + 10&#x000A;&#x000A;/ Now some markdown.&#x000A;:markdown&#x000A;  ## Look at me!&#x000A;&#x000A;/ Back to HAML&#x000A;= cool_helper</code></pre>
+<h6>
+  <i class='icon-save'></i>
+  Saving and Previewing Posts/Pages
+</h6>
+<p>It&#8217;s really simply to edit pages in real time &#8212; simply start typing.</p>
+
+<p>As you type, Inkpress constantly saves a preview of what you write. When you click the save icon, Inkpress automatically saves and recompiles your static HTML files. That&#8217;s right &#8211; <em>no manual compilation step</em>. If you&#8217;re not ready for your changes/content to go live, there are two options:</p>
+
+<ol>
+<li>If it&#8217;s a post, flag it as no-publish in the Front Matter: <code>flags: [&#39;no-publish&#39;]</code>. This will disable the post altogether and you&#8217;ll have to remove the flag to see the post go live.</li>
+
+<li><strong>Don&#8217;t click the Save icon</strong> &#8212; clicking the Save icon transfers your data from the preview file (<code>index_preview.haml</code>) to the main index (<code>index.haml</code>) file, and it sets up your page to be recompiled on the next request. Remember, your content is always safely stored in a preview file &#8211; don&#8217;t click Save until you&#8217;re ready to go live.</li>
+</ol>
+<h6>
+  <i class='icon-folder-open'></i>
+  The Directory Hierarchy
+</h6>
+<p>Each page/post on Inkpress has two files main files &#8211; an index file and a preview file &#8211; both of which live inside the main <code>content</code> directory:</p>
+
+<pre><code>content&#x000A;  \_ about&#x000A;    \_ index.haml&#x000A;    \_ index_preview.haml&#x000A;  \_ posts&#x000A;    \_ getting-started&#x000A;      \_ index.haml&#x000A;      \_ index_preview.haml&#x000A;      \_ some_associated_file.js</code></pre>
+
+<h6 id='the_controls'>The Controls</h6>
+
+<p>The controls in the Inkpress editor perform the following actions</p>
+<ul>
+  <li>
+    <i class='icon-eye-open'></i>
+    - Toggle the preview pane, aliased to <code>CMD + P</code>
+  </li>
+  <li>
+    <i class='icon-save'></i>
+    - Save & Recompile the page
+  </li>
+  <li>
+    <i class='icon-folder-open'></i>
+    - Create/Navigate the associated files
+  </li>
+  <li>
+    <i class='icon-link'></i>
+    - Create a new short URL
+  </li>
+  <li>
+    <i class='icon-resize-full'></i>
+    - Enter Zen editing mode
+  </li>
+  <li>
+    <i class='icon-remove'></i>
+    - Close Editor
+  </li>
+</ul>
+<h6>
+  <i class='icon-file'></i>
+  Creating an Associated File
+</h6>
+<p>Every page/post in Inkpress has the concept of <em>associated files</em>. A new page/post has no associated files, an a page/post can have 0 to many associate files.</p>
+
+<p>To create a new associated file, click the folder icon at the top of the page, then click &#8220;New File&#8221;.</p>
+
+<p>Including the new associated file is simple. For example, to include some Javascript code in your page first create the associated file. Let&#8217;s call it <code>hello.js</code>. Insert, for instance, <code>console.log(&#39;Hi.&#39;)</code> into <code>hello.js</code> then include that file in your post like so:</p>
+
+<pre lang='markdown'><code class='markdown' lang='markdown'># Hello, Inkpress&#x000A;Lo rem. Ip sum?&#x000A;&#x000A;  { file: hello.js}</code></pre>
+
+<p>This will get compiled down to:</p>
+
+<pre lang='html'><code class='html' lang='html'>&lt;h1&gt;Hello, Inkpress&lt;/h1&gt;&#x000A;&lt;p&gt;Lo rem. Ip sum?&lt;/p&gt;&#x000A;&lt;pre&gt;&#x000A;  &lt;code&gt;&#x000A;    console.log(&#39;Hi.&#39;)&#x000A;  &lt;/code&gt;  &#x000A;&lt;/pre&gt;</code></pre>
+
+<h6 id='front_matter'>Front Matter</h6>
+
+<p>All Inkpress content has what&#8217;s called <a href='https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter'>YAML Front Matter</a>. This is the portion of YAML-formatted code between the <code>---</code>. You can think of flags as local settings for a certain page or post. For example, the front matter for a post might look like:</p>
+
+<pre><code>---&#x000A;title:  Some title&#x000A;author: Name&#x000A;date:   February 11, 1990&#x000A;---&#x000A;&#x000A;:markdown&#x000A;  The rest of your post&#39;s content goes here.</code></pre>
+<h6>
+  <i class='icon-flag'></i>
+  Flags
+</h6>
+<p>In the front matter of your page/post, you can write various flags. Inkpress currently supports two flags:</p>
+
+<pre lang='ruby'><code class='ruby' lang='ruby'>no-publish      # don&#39;t publish post to home page&#x000A;titleize        # create pretty titles (all *posts* titleized by default)</code></pre>
+
+<p>To use <em>flags</em>, add an array to your front matter called <code>flags</code>:</p>
+
+<pre><code>---&#x000A;flags: [&#39;no-publish&#39;]&#x000A;---</code></pre>
+
+<h2 id='editing_inkpress_settings'>Editing Inkpress Settings</h2>
+
+<p>Inkpress stores your app&#8217;s settings in a YAML file (remember, no databases!). To edit your settings, open the Actions dialog then click &#8220;Settings&#8221;.</p>
+
+<p>Any non-default key/value pair added to your site&#8217;s settings can be accessed from anywhere within your content using the following HAML helper. For instance:</p>
+
+<pre lang='ruby'><code class='ruby' lang='ruby'>app(:author) # =&gt; Some Author</code></pre>
+
+<h2 id='uploading_images__files'>Uploading Images &amp; Files</h2>
+
+<p>Open the Actions dialog and click &#8220;Upload a File&#8221;. Simply drag your file into the drop area or select it manually.</p>
+
+<h2 id='creating_short_urls'>Creating Short URLs</h2>
+
+<p>Open the Actions dialog, click &#8220;Make a Short URL&#8221;, then paste in your URL. Voila!</p>
+
+<h2 id='deploying_your_inkpress_site'>Deploying Your Inkpress Site</h2>
+
+<p>To come&#8230;</p>
+
+<h2 id='syncing__saving_your_inkpress_site'>Syncing &amp; Saving Your Inkpress Site</h2>
+
+<p>To come&#8230;</p>
+
+<h2 id='more_to_come'>More to come!</h2>
+
+<p>These docs are by no means complete and they only touch the service of what Inkpress has to offer. Stay tuned for updated docs.</p>
+      </article>
+      <footer>
+  <div class='login'>
+    <i class='icon-circle-blank'></i>
+    <a href='#'>
+      login
+    </a>
+  </div>
+  <a class='description' href='http://inkpress.briangonzalez.org/getting-started' target='_blank'>
+    an Inkpress site
+  </a>
+  <!-- %span.copyright -->
+  <!-- = "© #{Time.now.year.to_s}" -->
+  <img class='logo' src='/assets/user/logo-60b04fe76a7d18c7c0b714fbb6b25bb5.svg'>
+</footer>
+    </div>
+  </div>
+</body>
+<script src='/assets/inkpress-libs-0283975a4b3c1d4f403dcfb0965c463a.js'></script>
+<script src='/assets/inkpress-routes-a0b75602b51a6ccd846b15ff347569b0.js'></script>
+<script src='/assets/inkpress-1d34140901c0f3c2e7e27b9d8f4a3d2b.js'></script>
+<!-- Add in our admin-specific javascript -- but don't add it in -->
+<!-- if we're logged out or about to compiled the page. -->
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount', 'UX-XXXXXX'],['_trackPageview'],['_trackPageLoadTime']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>

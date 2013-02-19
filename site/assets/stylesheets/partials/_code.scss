@@ -4,18 +4,28 @@ pre{
   margin-top: 0;
   margin-bottom: $base-space;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   @include border-radius(1px);
   @include box-shadow(5px 5px 0 $super-lightgrey);
+
+  &.expanded{
+    position: fixed; top: 0; right: 0; left: 0; bottom: 0; margin: 0;
+    z-index: 100;
+    code          { padding: $base-space*2; }
+    .name         { top: 20px; right: 20px; }
+    i.fullscreen  { top: 20px; left: 20px; }
+  }
 
   code{
     padding: $base-space/2;
     display: block;
     position: relative;
+    width: 100%; height: 100%;
 
     line-height: 1.6;
     font-size: 0.95em;
     @include box-sizing(border-box);
+
   }
 
   .name{
@@ -28,6 +38,15 @@ pre{
     background: rgba($lightgrey, 0.3);
     padding: 3px 7px;
     @include border-radius(0 0 0 2px);
+  }
+
+  i.fullscreen{ 
+    position: absolute; top: -26px; right: 0px; color: $lightgrey; cursor: pointer; 
+    @include single-transition(all, 250ms);
+    &:hover{ color: $lightgrey - 20; };
+
+    @include query-at($nav-breakpoint){ top: 0; right: -32px; }
+
   }
 
 }
