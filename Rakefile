@@ -49,6 +49,7 @@ namespace :ink do
       puts "\n*** Setting up remote repo"
       repo_url = ask("\n** URL for your remote git repository:")
       puts repo_url
+      puts `git remote set-url --delete origin  https://github.com/briangonzalez/inkpress`
       puts `git remote set-url --add origin #{repo_url}`
       puts "*** Remote repository set to #{repo_url}"
 
