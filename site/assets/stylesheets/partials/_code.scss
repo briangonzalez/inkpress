@@ -25,7 +25,6 @@ pre{
     line-height: 1.6;
     font-size: 0.95em;
     @include box-sizing(border-box);
-
   }
 
   .name{
@@ -42,7 +41,6 @@ pre{
 
   i.fullscreen{ 
     position: absolute; top: -26px; right: 0px; color: $lightgrey; cursor: pointer; 
-    @include single-transition(all, 250ms);
     &:hover{ color: $lightgrey - 20; };
 
     @include query-at($nav-breakpoint){ top: 0; right: -32px; }
