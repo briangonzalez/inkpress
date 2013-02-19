@@ -44,12 +44,29 @@ namespace :ink do
       FileUtils.cp_r( File.join(clean_folder, 'about.haml'),          File.join(site_folder, 'about', 'index.haml') )
       FileUtils.cp_r( File.join(clean_folder, 'images'),              File.join(site_folder, 'assets', 'images') )
 
-      puts "\n***********************************************************************"
-      puts "*** If using git, be sure to change your remote repo in '.git/config'"
+      # Setup remote repo.
+      # ------------------------------
+      puts "\n*** Setting up remote repo"
+      repo_url = ask("\n** URL for your remote git repository:")
+      `git remote set-url #{repo_url}`
+      puts "\n *** Remote repository set to #{repo_url}"
+
+      data  = YAML.load(File.read('./app.yaml'))
+      data['repo_url'] = repo_url 
+      File.open( './app.yaml', "w") {|f| f.write(data.to_yaml) }
+
     else
       puts "Quitting..." 
     end
 
+  end
+
+  desc "Export entire Inkpress site."
+  task :export do |task|
+    puts "\n*** " + task.full_comment
+    folder = ask("Folder to export to: ") { |p| p.default = "~/Desktop" }
+    `zip -r inkpress_export.zip ./site`
+    FileUtils.mv './inkpress_export.zip', File.expand_path(folder), :verbose => true
   end
 
 end
