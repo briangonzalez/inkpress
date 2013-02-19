@@ -62,7 +62,7 @@
     padding-bottom: $base-space/2;
   }
 
-  a       { background:   desaturate($tan-grey, 10%) ;   border-bottom: 1px solid rgba($primary-color, 0.2); }
+  a       { background:   desaturate($tan-grey, 10%) ;   border-bottom: 1px solid rgba($primary-color, 0.2); font-weight: bold; }
   a:hover { background:   rgba($primary-color, 0.1) }
 
 }
