@@ -57,6 +57,7 @@ class InkApp < Sinatra::Base
   before do
     # opt into the future
     response['X-UA-Compatible'] = "IE=edge,chrome=1"
+    expires 3600, :public, :must_revalidate
   end
 
   get '/' do
