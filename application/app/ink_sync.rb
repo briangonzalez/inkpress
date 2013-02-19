@@ -19,7 +19,7 @@ module Sinatra
                 "git push"
                ] 
 
-          git_root { return `#{cmds.join('; ')}` } 
+          git_root { return `#{cmds.join('&& ')}` } 
       end
 
       def git_root(&blk)
