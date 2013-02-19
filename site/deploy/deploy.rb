@@ -35,6 +35,7 @@ after "deploy:restart", "deploy:cleanup"
 
 # create our logs
 before 'deploy:restart', "deploy:create_logs"
+before 'deploy:restart', "deploy:checkout_master"
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
@@ -48,6 +49,10 @@ namespace :deploy do
     run "if [ ! -d #{logs} ]; then #{try_sudo} mkdir #{logs}; fi"
     run "if [ ! -f #{access} ]; then #{try_sudo} touch #{access}; fi"
     run "if [ ! -f #{error} ];  then #{try_sudo} touch #{error}; fi"
+  end
+
+  task :checkout_master do
+    run "cd '#{current_path}' && git checkout master && git pull"
   end
 
   task :restart, :roles => :app, :except => { :no_release => true } do

@@ -15,11 +15,10 @@ module Sinatra
                 "git add .",
                 "git commit -am 'Saved Inkpress site @ #{Time.now.to_datetime.strftime "%a, %d %b %Y, %l:%M%P"}'",
                 "git pull",
-                "git branch --set-upstream #{branch} remotes/origin/master",
                 "git push"
                ] 
 
-          git_root { return `#{cmds.join('&& ')}` } 
+        git_root { return `#{cmds.join('; ')}` } 
       end
 
       def git_root(&blk)
