@@ -109,7 +109,13 @@ var InkApp = Backbone.View.extend({
   scaleImages: function(){
     $.each( this.$imgs, function(obj, el){
       var $el = $(el);
-      $el.css({ maxWidth: $el.outerWidth() })
+      $el.css({ width: 'auto' })
+      var width;
+      $el.load(function(){ 
+        $this = $(this);
+        width = $this.width();
+        $this.css({ maxWidth: width, width: '100%' })
+      });
     })
   }
 
