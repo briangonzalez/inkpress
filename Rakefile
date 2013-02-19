@@ -48,8 +48,9 @@ namespace :ink do
       # ------------------------------
       puts "\n*** Setting up remote repo"
       repo_url = ask("\n** URL for your remote git repository:")
-      `git remote set-url #{repo_url}`
-      puts "\n *** Remote repository set to #{repo_url}"
+      puts repo_url
+      puts `git remote set-url --add origin #{repo_url}`
+      puts "*** Remote repository set to #{repo_url}"
 
       data  = YAML.load(File.read('./app.yaml'))
       data['repo_url'] = repo_url 
