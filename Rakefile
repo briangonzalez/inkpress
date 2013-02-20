@@ -67,8 +67,18 @@ namespace :ink do
   task :export do |task|
     puts "\n*** " + task.full_comment
     folder = ask("Folder to export to: ") { |p| p.default = "~/Desktop" }
+    `cp ./app.yaml ./site`
+    FileUtils.cp( 'app.yaml', 'site' )
     `zip -r inkpress_export.zip ./site`
+    FileUtils.rm_f('./site/app.yaml')
     FileUtils.mv './inkpress_export.zip', File.expand_path(folder), :verbose => true
+  end
+
+  desc "Import entire Inkpress site from prior Inkpress export"
+  task :import do |task|
+    puts "\n*** " + task.full_comment
+    folder = ask("Path to inkpress_export.zip: ") { |p| p.default = "~/Desktop/inkpress_export.zip" }
+    FileUtils.rm_rf('./site')
   end
 
 end
