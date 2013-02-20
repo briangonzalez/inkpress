@@ -12,7 +12,7 @@ div[role='main']{
 
     &, a { line-height: 1.2 }
 
-    a, a:visited, a:active  { color: $lightgrey - 60; font-size: 0.8em; text-decoration: none; border: 0 }
+    a, a:visited, a:active  { color: $lightgrey - 60; font-size: 0.8em; text-decoration: none; border: 0; font-weight: normal; }
     a:hover                 { color: $lightgrey - 100; } 
 
     .description, .copyright  { float: left; }
