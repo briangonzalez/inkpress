@@ -15,6 +15,7 @@ var InkAdminActionsDialog = Backbone.View.extend({
     events[ 'click' + ' .upload' ]        = 'showUploadFile',
     events[ 'click' + ' .generate-key' ]  = 'showGenerateKey',
     events[ 'click' + ' .logout' ]        = 'showLogout',
+    events[ 'click' + ' .recompile' ]     = 'recompile',
     events[ $.ink.startEvent + " " + '.close'] = 'remove'
 
     return events;
@@ -56,6 +57,17 @@ var InkAdminActionsDialog = Backbone.View.extend({
       });
     }
   },  
+
+  recompile: function(ev){
+    ev.preventDefault();
+    $.ajax({
+      url:  $.ink.Routes.admin.recompile,
+      type:   'POST',
+      success:  function(data){
+        $.ink.views.App.delayedReload();
+      }
+    });
+  },
 
   showUnpublished: function(){
     new $.ink.admin.views.Unpublished().render()

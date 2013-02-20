@@ -41,9 +41,9 @@ class InkApp < Sinatra::Base
   set :short_url_folder,    './site/short'
   set :site_folder,         './site'
   set :logging,             true
-  set :static,              true                  # best case scenario: nginx/apache's job
+  set :static,              true                                # best case scenario: nginx/apache's job
   set :haml,                :format => :html5
-  set :protection, except:  :session_hijacking    # don't let session expire thaaat easily
+  set :protection,          { except:  :session_hijacking |     # don't let session expire thaaat easily
 
   #   Sprockets setup.
   set :sprockets_root,  File.join( settings.root, 'application' )

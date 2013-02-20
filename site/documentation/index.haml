@@ -115,7 +115,7 @@ flags:    ['titleize']
      {:lang=html}
   
   
-  ###### Front Matter
+  #### Front Matter
 
   All Inkpress content has what's called [YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter). This is the portion of YAML-formatted code between the `---`. You can think of flags as local settings for a certain page or post. For example, the front matter for a post might look like:
 
@@ -144,13 +144,36 @@ flags:    ['titleize']
       ---
       flags: ['no-publish']
       ---
+    {:lang=YAML} 
+
+%h6
+  %i.icon-cogs
+  Other Settings
+
+:markdown
+
+  One can change the layout to a minimal layout by adding the following to a post or page's front matter:
+
+      ---
+      layout:   minimal   # Sets the layout to minimal
+      ---
+    {:lang=yaml}
+
+  Currently, "minimal" is the only supported alternative layout.
 
   ## Editing Inkpress Settings
   Inkpress stores your app's settings in a YAML file (remember, no databases!). To edit your settings, open the Actions dialog then click "Settings".
 
   Any non-default key/value pair added to your site's settings can be accessed from anywhere within your content using the following HAML helper. For instance:
 
-      app(:author) # => Some Author
+      author:     Brian
+      twitter:    brianmgonzalez
+      site:       My Blog
+    {:lang=app.yaml}
+
+      app(:author)    # => Brian
+      app(:twitter)   # => brianmgonzalez
+      app(:site)      # => My Blog
     {:lang=ruby}
 
   ## Uploading Images & Files 
@@ -159,7 +182,8 @@ flags:    ['titleize']
   ## Creating Short URLs
   Open the Actions dialog, click "Make a Short URL", then paste in your URL. Voila!
 
-
+  
+  ---
   # Managing your site
 
   ## Deploying Your Inkpress Site
@@ -168,7 +192,7 @@ flags:    ['titleize']
   If you are already familiar with Capistrano, deploying your Inkpress site will be a breeze.
 
   ###### 1. Setup
-    Capistrano `setup` ensures all of the correct folders are created and put in place on your server, which prepares your site for deployment. Capistrano `setup` only needs to be run once on each server your site will be deployed to.
+    Capistrano `setup` ensures all of the correct folders are created and put in place on your server, which prepares the second phase: deployment. Capistrano `setup` only needs to be run once on each server your site will be deployed to.
 
   To setup both your 
  
