@@ -2,6 +2,9 @@
 require 'bundler' # gem requires
 Bundler.require(:default)
 
+# Sinatra's built in content_for
+require "sinatra/content_for"
+
 #   Core Ruby requires, modules
 %w(securerandom timeout cgi date).each do |requirement|
   require requirement

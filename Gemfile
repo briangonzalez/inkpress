@@ -11,6 +11,7 @@ gem 'rack'
 
 # sinatra
 gem 'sinatra'
+gem 'sinatra-contrib'
 
 # sprockets galore
 gem 'sprockets'

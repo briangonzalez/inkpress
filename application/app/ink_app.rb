@@ -27,6 +27,7 @@ class InkApp < Sinatra::Base
   helpers Sinatra::MiscHelper
   helpers Sinatra::PostHelper
   helpers Sinatra::RequestHelper
+  helpers Sinatra::ContentFor
   helpers Sprockets::Helpers
 
   #   Configuration.
