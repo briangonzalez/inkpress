@@ -212,7 +212,13 @@ flags:    ['titleize']
     {:lang=shell}
 
   ## Saving Your Inkpress Site
-  To come...
+  Inkpress takes advantage of [Git](http://git-scm.com/) for sync files to a remote repository for safe keeping. This way, you can do all of your editing on the server without the need pop into the command line.
 
+  ###### Checking the Status of Your Site
+  Pull up the Actions dialog (`CTRL + A`), then click __Sync Site__ then __Status__. This will tell you the exact state of your Inkpress repo. If your site is deployed before you've synced, your changes will overwritten.
+
+  ###### Syncing Files to your Remote Repo
+  Pull up the Actions dialog (`CTRL + A`), then click __Sync Site__ then __Sync__. This will, in essence add, commit, and push any unchanged files to your remote git repository.
+ 
   ## More to come!
   These docs are by no means complete and they only touch the service of what Inkpress has to offer. Stay tuned for updated docs.
