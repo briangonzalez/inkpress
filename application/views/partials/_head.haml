@@ -12,6 +12,7 @@
 /   Include our main bootstrap css file, which includes
 /   everything we need to get up & running.
 %link{:href => stylesheet_path('inkpress'),       :media => "all", :rel => "stylesheet"}
+= yield_content :styles
 
 /   Google Web Fonts. 
 /   Their free, use 'em..

@@ -25,9 +25,9 @@ div[role='main']{
       position: absolute; top: 95%; left: 50%;
       display: block;
       margin-right: -0.6em;
-      height: 16px;
+      height: 70%;
       text-align: center;
-      @include filter(opacity(30%))
+      opacity: 0.2;
     }
 
   }
