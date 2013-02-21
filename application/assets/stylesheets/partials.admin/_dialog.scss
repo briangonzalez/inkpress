@@ -49,6 +49,11 @@
       -webkit-overflow-scrolling: touch;
     }
 
+    @include mixed-query-at($nav-breakpoint, $breakpoint-3) {
+      max-height: 300px;
+      -webkit-overflow-scrolling: touch;
+    }
+
     input, a.button{ margin-top: $base-space/2; }
 
     & input:first-child{

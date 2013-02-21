@@ -16,6 +16,7 @@ var InkAdminEdit = Backbone.View.extend({
     events[ $.ink.startEvent + ' .controls .save']        = "savePage";
     events[ $.ink.startEvent + ' .controls .preview']     = "preview";
     events[ $.ink.startEvent + ' .controls .files']       = "showFiles";
+    events[ $.ink.startEvent + ' .controls .upload']      = "showUploadFile";
     events[ $.ink.startEvent + ' .controls .short-url']   = "showShortURL";
     events[ $.ink.startEvent + ' .toggle-zen']            = "toggleZen";
     events[ $.ink.startEvent + ' .toggle-color']          = "toggleColor";
@@ -94,6 +95,10 @@ var InkAdminEdit = Backbone.View.extend({
 
   showFiles: function(){
     new $.ink.admin.views.EditFiles().render();
+  },
+
+  showUploadFile: function(){
+    new $.ink.admin.views.UploadFile().render();
   },
 
   showShortURL: function(){
