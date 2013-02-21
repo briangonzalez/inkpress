@@ -17,6 +17,7 @@ var InkCodeView = Backbone.View.extend({
     this.$javascript    = this.$el.filter("[lang='javascript']");
     this.$html          = this.$el.filter("[lang='html']");
     this.$css           = this.$el.filter("[lang='css']");
+    this.$scss           = this.$el.filter("[lang='scss']");
     this.$shell         = this.$el.filter("[lang='shell']");
 
     this.highlightCode();
@@ -32,6 +33,7 @@ var InkCodeView = Backbone.View.extend({
     this.$javascript.attr('data-language', 'javascript');  
     this.$html.attr('data-language', 'html');  
     this.$css.attr('data-language', 'css');  
+    this.$scss.attr('data-language', 'css');  
     this.$shell.attr('data-language', 'shell');  
 
   },
