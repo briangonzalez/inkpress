@@ -42,8 +42,8 @@ var InkCodeView = Backbone.View.extend({
       var $pre  = $el.parents('pre');
       var lang  = $el.attr('lang');
 
-      var $name = $("<div/>", { class: 'name', text: lang })
-      $pre.append($name)
+      var $lang = $("<div/>", { class: 'language', text: lang })
+      $pre.append($lang)
 
     });
   },
