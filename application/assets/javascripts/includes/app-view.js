@@ -23,7 +23,7 @@ var InkApp = Backbone.View.extend({
     setTimeout(function(){ window.scrollTo(0, 0) }, 0);
 
     this.$smallNav      = this.$el.find('nav.main');
-    this.$imgs          = this.$el.find('div[role=main] article img');
+    this.$imgs          = this.$el.find('div[role=main] article img.scale');
 
     this.setUnderscoreInterpolation();
     this.scaleImages();
