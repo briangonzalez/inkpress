@@ -194,7 +194,7 @@ flags:    ['titleize']
   ###### 1. Setup
     Capistrano `setup` ensures all of the correct folders are created and put in place on your server, which prepares the second phase: deployment. Capistrano `setup` only needs to be run once on each server your site will be deployed to.
 
-  To setup both your 
+  To setup both your `staging` and `production` servers, run the following:
  
       $ > cap deploy:setup                     # setup staging server
       $ > DEPLOY=production cap deploy:setup   # setup production server

@@ -1,7 +1,7 @@
 --- 
 site: Inkpress
 tagline: A small, lightweight, dead simple content management system built on free & open source technologies.
-ga: UX-XXXXXX
+ga: UA-38688465-1 
 twitter: brianmgonzalez
 repo_url: git@github.com:briangonzalez/inkpress.git
 authorized_users: 
