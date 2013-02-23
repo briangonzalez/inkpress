@@ -38,18 +38,17 @@
   }
 
   header{
-    padding: 1.5em;
+    padding: 1.2em;
     @include border-radius(2px 2px 0 0);
     border-bottom: 10px solid $admin-darkgrey;
 
-    h2 { margin: 0; color: $admin-darkgrey; font-family: $base-font; font-weight: bold;}
+    h2 { margin: 0 auto; color: $admin-darkgrey; font-family: $base-font; font-weight: bold; }
   }
 
   .content{
-    padding: 20px;
+    padding: 10px;
 
     @include query-at($nav-breakpoint){
-      max-height: 500px;
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
     }
@@ -94,7 +93,7 @@
       float: none;
       margin-right: 0;
       margin-left: 0;
-      margin-top: $base-space/2;
+      margin-top: 10px;
 
       @include query-at($nav-breakpoint){
         float: right;
