@@ -80,11 +80,13 @@ class InkApp < Sinatra::Base
 
   not_found do
     short_url?
-    ink(:path => '/not_found')
+    reset_ink_variables
+    ink(:path => '/not_found', :no_static => true)
   end
 
   error do 
-    ink(:path => '/error')
+    reset_ink_variables
+    ink(:path => '/error', :no_static => true)
   end
 
 end

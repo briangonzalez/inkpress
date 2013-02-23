@@ -10,7 +10,7 @@ module Sinatra
       @short_page_path        = opts[:path] if opts[:path] 
 
       # Check if our compiled .html page exists, if so send it along.
-      if send_static?
+      if send_static? and !opts[:no_static]
         puts "** Sending static file: #{compiled_page}"
         send_file( compiled_page )
 
@@ -74,6 +74,11 @@ module Sinatra
 
     def compiled_path
       @compiled_path ||= File.dirname( compiled_page )
+    end
+
+    def reset_ink_variables
+      @short_page_path, @raw_page_content, @page_path, @home_page, @compiled_page, @compiled_path = \
+      nil, nil, nil, nil, nil, nil
     end
 
     def index_path(preview=false)
