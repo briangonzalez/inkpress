@@ -11,8 +11,9 @@ flags:    ['titleize']
   3. [Editing Inkpress Settings](#editing_inkpress_settings)
   4. [Uploading Images & Files](#uploading_images__files)
   5. [Creating Short URLs](#creating_short_urls)
-  6. [Deploying your Inkpress Site](#deploying_your_inkpress_site)
-  7. [Saving Your Inkpress Site](#saving_your_inkpress_site)
+  6. [Changing the Default Root Page](#changing_the_default_root_page)
+  7. [Deploying your Inkpress Site](#deploying_your_inkpress_site)
+  8. [Saving Your Inkpress Site](#saving_your_inkpress_site)
 
   ## Installation & Setup
   Info on getting up on running can be found on the [Getting Started](/getting-started) page.
@@ -182,6 +183,20 @@ flags:    ['titleize']
   ## Creating Short URLs
   Open the Actions dialog, click "Make a Short URL", then paste in your URL. Voila!
 
+  ## Changing the Default Root Page
+  You may not always want your default root page (located at `http://yoursite.com/`) to display a list of your posts.
+
+  In order to change the default "root" page, change the setting `root_path` to some other value than `' /home'`. _Note_ the leading space, which is needed for now.
+
+  So, for instance, to change your default root (`/`) to your __Getting Started__ page, edit `root_path` in your settings as follows:
+
+      root_path: " /getting-started"
+    {:lang=app.yaml}
+
+  Now `/` will dynamically load the contents of `/getting-started`. __Note__ that changing your `root_path` requires a server restart. 
+
+  Also, __note__ that Inkpress always aliases `/home` and `/posts` to each other. These two routes always display a list of your posts.
+  
   
   ---
   # Managing your site
