@@ -16,6 +16,7 @@ module Sinatra
       data  = YAML.load(File.read(APP_VALUES_PATH))
       data[key.to_s]
     end
+    module_function :app
 
     def flagged_as?(flag)
       return false if !@flags

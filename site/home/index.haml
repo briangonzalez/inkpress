@@ -1,4 +1,4 @@
-- @title = 'Home'
+- @title = underscored_path.empty? ? 'Home' : underscored_path.capitalize
 
 - posts = post_titles_and_info
 
@@ -7,7 +7,7 @@
     
     - unless p[0] == 0
 
-      %section
+      %section.post
         %h2
           = p[0] # The year
 

@@ -41,6 +41,7 @@ class InkApp < Sinatra::Base
   set :clean_folder,        './application/clean'
   set :short_url_folder,    './site/short'
   set :site_folder,         './site'
+  set :root_path,           Sinatra::AppHelper.app(:root_path)
   set :logging,             true
   set :static,              true                                # best case scenario: nginx/apache's job
   set :haml,                :format => :html5
@@ -61,11 +62,12 @@ class InkApp < Sinatra::Base
   end
 
   get '/' do
-    ink(:path => '/home')
+    path = settings.root_path || '/home'
+    ink(:path => path.strip )
   end 
 
-  get '/home' do
-    redirect "/"
+  get %r{^/home(/\z|\z)|^/posts(/\z|\z)} do
+    ink(:path => '/home')
   end
 
   get '/*' do

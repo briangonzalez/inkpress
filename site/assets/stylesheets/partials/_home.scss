@@ -1,7 +1,7 @@
-body.home{
+body.home, body.posts{
 
   div[role="main"]{
-    section{
+    section.post{
       @include clearfix;
       padding-bottom: $base-space;
       border-bottom: 1px solid $super-lightgrey; 
