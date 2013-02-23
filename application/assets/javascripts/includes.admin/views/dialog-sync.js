@@ -3,6 +3,7 @@
 var InkAdminSync = Backbone.View.extend({
   events: {
     'click .sync'   : 'sync',
+    'click .pull'   : 'pull',
     'click .status' : 'status',
     'click .close'  : 'remove'
   },
@@ -31,7 +32,20 @@ var InkAdminSync = Backbone.View.extend({
         new $.ink.admin.views.Output({ content: data.output }).render()
       }
     });
+  },
 
+  pull: function(){
+    var self = this;
+    this.wait();
+    
+    $.ajax({
+      url:    $.ink.Routes.sync.pull,
+      type:  'POST',
+      success:  function(data){
+        self.done();
+        new $.ink.admin.views.Output({ content: data.output }).render()
+      }
+    });
   },
 
   status : function(){

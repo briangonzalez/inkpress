@@ -6,7 +6,11 @@ module Sinatra
     module Helpers
 
       def git_status
-        git_root { `git status` } 
+        git_root { return `git status` } 
+      end
+
+      def git_pull
+        git_root { return `git pull` }
       end
 
       def git_sync
@@ -42,6 +46,13 @@ module Sinatra
         halt 403 unless logged_in? 
         content_type :json
         output = git_sync.gsub(/\n/, '<br>')
+        return { :output => output }.to_json
+      end
+
+      app.post '/ink/sync/pull' do
+        halt 403 unless logged_in? 
+        content_type :json
+        output = git_pull.gsub(/\n/, '<br>')
         return { :output => output }.to_json
       end
 

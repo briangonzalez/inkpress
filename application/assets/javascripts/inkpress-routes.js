@@ -21,6 +21,7 @@ $.ink.Routes  = {
 
   sync: {
     status:                 '/ink/sync/status',
+    pull:                   '/ink/sync/pull',
     save:                   '/ink/sync/save'
   },
 
