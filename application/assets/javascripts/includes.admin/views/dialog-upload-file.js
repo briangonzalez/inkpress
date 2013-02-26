@@ -10,6 +10,7 @@ var InkAdminUploadFileDialog = Backbone.View.extend({
   getElements: function(){
     this.$dragarea  = this.$el.find('.drag-area');
     this.$content   = this.$el.find('.content');
+    this.$close     = this.$el.find('.close');
     $('body').on('drop',     function(ev){ ev.preventDefault() });
     $('body').on('dragover', function(ev){ ev.preventDefault() });
   },
@@ -78,8 +79,7 @@ var InkAdminUploadFileDialog = Backbone.View.extend({
     var $fileURL = this.$el.find('.file-url').first();
 
     _.each(files, function(file){
-      console.log(file)
-      $fileURL.clone().text( window.location.origin + '/' + file).appendTo(self.$content).show();
+      $fileURL.clone().text( window.location.origin + '/' + file).insertBefore(self.$close).show();
     })
   } 
 
