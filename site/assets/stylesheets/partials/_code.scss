@@ -11,9 +11,9 @@ pre{
   &.expanded{
     position: fixed; top: 0; right: 0; left: 0; bottom: 0; margin: 0;
     z-index: 100;
-    code          { padding: $base-space*2; }
-    .name         { top: 20px; right: 20px; }
-    i.fullscreen  { top: 20px; left: 20px; }
+    code            { padding: $base-space*2; }
+    .language-name  { top: 10px; right: 10px; }
+    i.fullscreen    { top: 10px; left: 10px; right: auto; }
   }
 
   code{
@@ -23,11 +23,12 @@ pre{
     width: 100%; height: 100%;
 
     line-height: 1.6;
-    font-size: 0.95em;
+    font-size: 0.9em;
+    letter-spacing: 1px;
     @include box-sizing(border-box);
   }
 
-  .language{
+  .language-name{
     position: absolute; top: 0; right: 0;
     font-size: 0.65em;
     line-height: 1.2;
@@ -40,11 +41,9 @@ pre{
   }
 
   i.fullscreen{ 
-    position: absolute; top: -26px; right: 0px; color: $lightgrey; cursor: pointer; 
-    &:hover{ color: $lightgrey - 20; };
-
-    @include query-at($nav-breakpoint){ top: 0; right: -32px; }
-
+    position: absolute; top: -18px; right: 0px; color: $lightgrey; cursor: pointer;
+    &:hover{ color: $lightgrey - 30; };
+    @include query-at($nav-breakpoint){ top: 0; right: -50px; background: rgba($super-lightgrey, 0.95); color: $lightgrey - 30; padding: 10px; }
   }
 
 }
@@ -56,7 +55,7 @@ p, li{
     border: 1px solid $lightgrey;
     @include border-radius(3px);
     margin: 3px;
-    color: #000;
+    color: $darkgrey;
     @include box-shadow(2px 2px 0 $super-lightgrey);
   }
 }
