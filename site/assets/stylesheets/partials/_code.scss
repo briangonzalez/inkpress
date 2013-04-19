@@ -6,7 +6,6 @@ pre{
   position: relative;
   overflow: visible;
   @include border-radius(1px);
-  @include box-shadow(5px 5px 0 $super-lightgrey);
 
   &.expanded{
     position: fixed; top: 0; right: 0; left: 0; bottom: 0; margin: 0;
@@ -51,7 +50,7 @@ pre{
 p, li{
   code{
     padding: 1px 5px 2px 5px;
-    border: 1px solid $lightgrey;
+    border: 1px solid $super-lightgrey;
     @include border-radius(3px);
     margin: 3px;
     color: $darkgrey;

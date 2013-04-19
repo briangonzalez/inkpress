@@ -14,11 +14,4 @@
 //= require "includes/libraries/backbone"
 //= require "includes/libraries/behave"
 
-//= require "includes/libraries/rainbow/rainbow"
-//= require "includes/libraries/rainbow/languages/generic"
-//= require "includes/libraries/rainbow/languages/javascript"
-//= require "includes/libraries/rainbow/languages/ruby"
-//= require "includes/libraries/rainbow/languages/css"
-//= require "includes/libraries/rainbow/languages/html"
-//= require "includes/libraries/rainbow/languages/python"
-//= require "includes/libraries/rainbow/languages/shell"
+//= require "includes/libraries/highlight.pack"

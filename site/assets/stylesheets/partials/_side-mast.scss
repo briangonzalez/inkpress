@@ -37,10 +37,9 @@ $header-z: 10;
 
   header{
     text-align: center;
-    background: rgba($tan-grey, 0.95);
-    height: 65px;
-    border-bottom: 8px solid $secondary-color;
-    @include box-shadow(0px 2px 0 $secondary-color - 30, 0px 4px 10px rgba($secondary-color - 100, 0.3) );
+    background: white;
+    border-bottom: 1px solid $secondary-color;
+    color: white;
     position: fixed; top: 0; left: 0; right: 0;
     z-index: $header-z;
 
@@ -79,6 +78,7 @@ $header-z: 10;
     a.logo-wrap{
      display: none;
 
+     img{ @include filter( invert(100%) ) }
 
       @include query-at($nav-breakpoint){
         background: $secondary-color;
@@ -90,11 +90,10 @@ $header-z: 10;
         float: none;
         text-align: center;
         @include border-radius(3.5em);
-        @include box-shadow(1px 1px 0 $secondary-color - 30, 1px 3px 6px rgba($secondary-color - 100, 0.2) );
 
         img{
           height: 100%;
-          @include filter( invert(100%) opacity(95%) drop-shadow(0 1px 1px $secondary-color - 60) );
+          @include filter( invert(100%) opacity(95%));
         }
 
       }
@@ -147,7 +146,7 @@ $header-z: 10;
       }
 
       a.site-title, a.site-title:hover, a.site-title:visited{
-        font-weight: 900;
+        font-weight: 200;
         text-decoration: none;
         text-transform: uppercase;
         color: $base-headingfont-color;

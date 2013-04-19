@@ -1,7 +1,7 @@
 # = Gemfile containing requirements for this app =
 #     see http://gembundler.com/ for more on how to use this file
 # source (there are others but whatever)
-source :rubygems
+source "https://rubygems.org'"
 
 # server
 gem 'thin'

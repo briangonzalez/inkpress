@@ -25,12 +25,14 @@
   }
 
   h1{
-    font-size: 3em;
+    font-size: 2em;
     text-transform: uppercase;
     font-weight: 300;
 
-    @include query-at($nav-breakpoint){ font-size: 4em; }
-    @include query-at($breakpoint-5)  { font-size: 5em; }
+    @include query-at($breakpoint-1){ font-size: 2.3em }
+    @include query-at($breakpoint-2){ font-size: 3em }
+    @include query-at($breakpoint-3){ font-size: 3em }
+    @include query-at($breakpoint-4){ font-size: 2.2em }
   }
 
   .title + h2, h1 + h2{

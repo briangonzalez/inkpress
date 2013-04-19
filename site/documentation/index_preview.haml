@@ -32,7 +32,7 @@ flags:    ['titleize']
       
       / Back to HAML
       = cool_helper
-    {:lang='haml & md'}
+
 %h6
   %i.icon-save
   Saving and Previewing Posts/Pages
@@ -102,7 +102,6 @@ flags:    ['titleize']
       Lo rem. Ip sum?
 
         { file: hello.js}
-    {:lang=markdown}
 
   This will get compiled down to:
 
@@ -113,7 +112,6 @@ flags:    ['titleize']
           console.log('Hi.')
         </code>  
       </pre>
-     {:lang=html}
   
   
   #### Front Matter
@@ -138,14 +136,12 @@ flags:    ['titleize']
 
       no-publish      # don't publish post to home page
       titleize        # create pretty titles (all *posts* titleized by default)
-    {:lang=ruby}
 
   To use _flags_, add an array to your front matter called `flags`:
         
       ---
       flags: ['no-publish']
       ---
-    {:lang=YAML} 
 
 %h6
   %i.icon-cogs
@@ -158,7 +154,6 @@ flags:    ['titleize']
       ---
       layout:   minimal   # Sets the layout to minimal
       ---
-    {:lang=yaml}
 
   Currently, "minimal" is the only supported alternative layout.
 
@@ -170,12 +165,10 @@ flags:    ['titleize']
       author:     Brian
       twitter:    brianmgonzalez
       site:       My Blog
-    {:lang=app.yaml}
 
       app(:author)    # => Brian
       app(:twitter)   # => brianmgonzalez
       app(:site)      # => My Blog
-    {:lang=ruby}
 
   ## Uploading Images & Files 
   Open the Actions dialog and click "Upload a File". Simply drag your file into the drop area or select it manually.
@@ -191,7 +184,6 @@ flags:    ['titleize']
   So, for instance, to change your default root (`/`) to your __Getting Started__ page, edit `root_path` in your settings as follows:
 
       root_path: " /getting-started"
-    {:lang=app.yaml}
 
   Now `/` will dynamically load the contents of `/getting-started`. __Note__ that changing your `root_path` requires a server restart. 
 
@@ -213,18 +205,15 @@ flags:    ['titleize']
  
       $ > cap deploy:setup                     # setup staging server
       $ > DEPLOY=production cap deploy:setup   # setup production server
-    {:lang=shell}
 
   ###### 2. Deploy
   When deploying your site, it's always a good idea to verify you haven't broken anything by deploying __first__ to your staging server.
  
       $ > cap deploy  # deploy to staging server
-    {:lang=shell}
 
   .. and if all looks good..
     
       $ > DEPLOY=production cap deploy # deploy to production server
-    {:lang=shell}
 
   ## Saving Your Inkpress Site
   Inkpress takes advantage of [Git](http://git-scm.com/) for sync files to a remote repository for safe keeping. This way, you can do all of your editing on the server without the need pop into the command line.
