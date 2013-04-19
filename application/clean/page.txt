@@ -6,5 +6,4 @@ flags:    ['titleize']                       # Only if titleizing. Remove this f
 ---
 
 :markdown
-  
   Write your post in markdown, here.
