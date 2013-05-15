@@ -1,4 +1,4 @@
-.side-mast
+%div{ :class => 'side-mast animated fadeInDown' }
   %header
     %a.nav-icon-wrap{ :href => '#' }
       %i.icon-reorder
@@ -7,8 +7,8 @@
       %img{ :src => image_path('user/logo.svg')}
     
     %h1
-      %a.site-title{:href => "/"}
-        %img{ :src => image_path('user/logo.svg')}
+      %a.site-title{ :href => "/"}
+        %img{ :class => 'animated flipInX', :src => image_path('user/logo.svg')}
         = app(:site)
 
     %span.tagline

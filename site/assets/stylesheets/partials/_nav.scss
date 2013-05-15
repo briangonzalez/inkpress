@@ -3,6 +3,8 @@ nav{
   float: left;
   width: 100%;
   display: none;
+  @extend .animated;
+  @extend .fadeInDown;
 
   @include query-at($nav-breakpoint){ 
     display: block;
@@ -72,7 +74,8 @@ nav{
           &.current, &:hover{ 
             color: $primary-color; 
             border-bottom: 1px solid rgba($primary-color, 0.2); 
-            border-top: 1px solid rgba($primary-color, 0.2); 
+            border-top: 1px solid rgba($primary-color, 0.2);
+            &:hover{ padding-left: 5px; };
           }
         }
       }
@@ -90,9 +93,6 @@ nav{
         }
       }
     }
-
-
-
   }
 
 }

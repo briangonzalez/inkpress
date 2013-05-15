@@ -9,11 +9,11 @@ div[role="main"]{
     h2 { font-size: 1.5em; }
 
     .meta{
-      font-size: 0.9em;
+      font-size: 0.8em;
 
       time, .author   { font-weight: 700; color: $lightgrey - 10; text-transform: uppercase;  }
-      .between        { color: $lightgrey - 5; font-style: italic; 
-                        display: inline-block; margin: 0 0.4em; font-weight: 400; 
+      .between        { color: $lightgrey + 10;  
+                        display: inline-block; margin: 0 0.4em; font-weight: 200; 
                         font-size: 0.9em; letter-spacing: 1px;
                       }
     }

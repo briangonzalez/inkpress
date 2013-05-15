@@ -24,12 +24,12 @@ body.home, body.posts{
             font-weight: normal;
             @include border-radius(0);
 
-            &:hover{ color: $primary-color; };
+            &:hover{ color: $primary-color - 20; };
           }
 
           time{
             display: block;
-            color: $lightgrey - 50;
+            color: $lightgrey - 20;
             font-size: 0.75em;
           }
 

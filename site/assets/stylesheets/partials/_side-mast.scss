@@ -13,6 +13,7 @@ $header-z: 10;
 //    Hence, side-mast.
 .side-mast { 
   position: absolute; left: 0; right: 0; 
+  z-index: $header-z;
   * { @include single-transition(all, 0) }
 
   @include query-at($nav-breakpoint){
@@ -38,7 +39,7 @@ $header-z: 10;
   header{
     text-align: center;
     background: white;
-    border-bottom: 1px solid $secondary-color;
+    border-bottom: 1px solid $super-lightgrey;
     color: white;
     position: fixed; top: 0; left: 0; right: 0;
     z-index: $header-z;
@@ -93,7 +94,7 @@ $header-z: 10;
 
         img{
           height: 100%;
-          @include filter( invert(100%) opacity(95%));
+          @include filter( invert(100%) opacity(95%) );
         }
 
       }
@@ -141,10 +142,6 @@ $header-z: 10;
         margin-left: -5px;
       }
 
-      @include query-at($breakpoint-4){
-        font-size: 3.2em;
-      }
-
       a.site-title, a.site-title:hover, a.site-title:visited{
         font-weight: 200;
         text-decoration: none;
@@ -182,28 +179,3 @@ $header-z: 10;
   }
 
 }
-
-//  Our full width faux-column.. pretty snazzy, eh?
-// 
-.side-mast:after{
-  // @include side-mast-full-width();
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 2%; right: 2%;
-  border-bottom: 1px solid $tan-grey - 10;
-  z-index: -1;
-  display: none;
-
-  @include query-at($nav-breakpoint){ display: block; }
-
-  @include query-at($main-breakpoint){
-      position: fixed;
-      top: 8%; bottom: 20%;
-      right: 0; left: 0;
-      @include side-mast-snap-left-width();
-      border: 0;
-      border-right: 1px solid $tan-grey - 10;
-  }
-
-};
