@@ -1,5 +1,8 @@
+__NOTICE: This repo is no longer being maintained! All work is done at this fork:__
+##[https://github.com/briangonzalez/briangonzalez.org](https://github.com/briangonzalez/briangonzalez.org).
 
-# This repo is no longer being maintained! All work is done at this fork: [https://github.com/briangonzalez/briangonzalez.org](https://github.com/briangonzalez/briangonzalez.org).
+
+
 
 ## Inkpress
 
